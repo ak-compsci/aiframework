@@ -1,0 +1,56 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .tab-active {
+            background-color: #0d9488; /* teal-600 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .tab-inactive {
+            background-color: white;
+            color: #334155; /* slate-700 */
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0; /* slate-200 */
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .principle-card {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border: 1px solid #e2e8f0;
+        }
+        .accordion-header {
+            cursor: pointer;
+        }
+        .scale-level-active {
+            background-color: #f0fdfa; /* teal-50 */
+            border-left-color: #0d9488; /* teal-600 */
+        }
+        .stepper-item-active {
+            border-left-color: #0d9488; /* Changed from border-color to border-left-color */
+            color: #0d9488;
+        }
+        .stepper-item-active .stepper-circle {
+            background-color: #0d9488;
+            color: white;
+        }
+        .prose-custom {
+            color: #334155; /* slate-700 */
+        }
+        .prose-custom h3 {
+            color: #0f766e; /* teal-700 */
+            font-weight: 600;
+        }
+        .prose-custom p {
+            line-height: 1.75;
+        }
+        .prose-custom ul {
+            list-style-position: inside;
+        }
+        .prose-custom li::marker {
+            color: #14b8a6; /* teal-500 */
+        }
