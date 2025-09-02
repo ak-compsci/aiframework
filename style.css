@@ -1,7 +1,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body {
         font-family: 'Inter', sans-serif;
-        background-color: #f8fafc; /* slate-50 */
+        background-color: #f8fafc;
     }
     .tab-active {
         background-color: #022e53;
@@ -10,12 +10,20 @@
     }
     .tab-inactive {
         background-color: white;
-        color: #334155; /* slate-700 */
+        color: #334155;
     }
     .section-card {
         background-color: white;
         border-radius: 0.75rem;
-        border: 1px solid #e2e8f0; /* slate-200 */
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+        transition: all 0.3s ease-in-out;
+    }
+    .section-card-visiom {
+        background-color: 022e53;
+        color: white;
+        border-radius: 0.75rem;
+        border: 1px solid #e2e8f0;
         box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
         transition: all 0.3s ease-in-out;
     }
@@ -27,11 +35,11 @@
         cursor: pointer;
     }
     .scale-level-active {
-        background-color: #f0fdfa; /* teal-50 */
-        border-left-color: #0d9488; /* teal-600 */
+        background-color: #f0fdfa;
+        border-left-color: #1c8fc3; 
     }
     .stepper-item-active {
-        border-left-color: #0d9488; /* Changed from border-color to border-left-color */
+        border-left-color: #1c8fc3;
         color: #0d9488;
     }
     .stepper-item-active .stepper-circle {
@@ -58,11 +66,11 @@
     :where(.accordion-content, .tab-pane, .stepper-detail-content, .scale-detail-content, .prose) a:not(.btn):not(.no-underline) {
     color: #1c8fc3;
     text-decoration: underline;
-    text-underline-offset: 3px;     /* pull underline away from text */
+    text-underline-offset: 3px;  
     text-decoration-thickness: 1.5px;
     text-decoration-skip-ink: auto;
     }
     :where(.accordion-content, .tab-pane, .stepper-detail-content, .scale-detail-content, .prose) a:hover {
-    text-decoration-thickness: 2px; /* a bit bolder on hover */
+    text-decoration-thickness: 2px;
     }
     a.btn, .btn a, .tab-btn, .accordion-header { text-decoration: none !important; }
