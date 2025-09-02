@@ -39,10 +39,10 @@
         color: white;
     }
     .prose-custom {
-        color: #334155; /* slate-700 */
+        color: #022e53;
     }
     .prose-custom h3 {
-        color: #0f766e; /* teal-700 */
+        color: #022e53;
         font-weight: 600;
     }
     .prose-custom p {
@@ -52,11 +52,11 @@
         list-style-position: inside;
     }
     .prose-custom li::marker {
-        color: #14b8a6; /* teal-500 */
+        color: #1c8fc3;
     }
 
     :where(.accordion-content, .tab-pane, .stepper-detail-content, .scale-detail-content, .prose) a:not(.btn):not(.no-underline) {
-    color: #0f766e;                 /* teal-ish link color */
+    color: #1c8fc3;
     text-decoration: underline;
     text-underline-offset: 3px;     /* pull underline away from text */
     text-decoration-thickness: 1.5px;
