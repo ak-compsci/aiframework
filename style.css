@@ -54,8 +54,3 @@
     .prose-custom li::marker {
         color: #14b8a6; /* teal-500 */
     }
-
-    h4 {
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-    }
