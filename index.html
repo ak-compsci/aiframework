@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="text-slate-800">
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -17,7 +19,7 @@
                     <h1 class="text-xl sm:text-2xl font-bold text-slate-900">Alaska's AI in K-12 Education</h1>
                     <p class="text-sm text-slate-500">An Interactive Guide for Responsible Integration</p>
                 </div>
-                <div class="flex items-center space-x-2 text-sm text-teal-700">
+                <div class="flex items-center space-x-2 text-sm ">
                     <span>❄️</span>
                     <span>State of Alaska Department of Education & Early Development</span>
                 </div>
@@ -26,12 +28,23 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        
-        <section id="vision" class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4">Our Vision for AI in Education</h2>
-            <p class="max-w-4xl mx-auto text-lg text-slate-600">
-                To empower every Alaskan student and educator to ethically and effectively engage with Artificial Intelligence, fostering critical thinking, creativity, and responsible digital citizenship, thereby providing all learners with the opportunity and comprehensive support to thrive in an evolving, AI-driven world.
-            </p>
+
+        <section id="vision" class="section-card-vision p-6 md:p-8 mb-8">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div class="md:max-w-3xl">
+                    <h3 class="text-2xl font-bold mb-3">Our Vision for AI in Education</h3>
+                    <p class="text-slate-700 text-white">
+                        To empower every Alaskan student and educator to ethically and effectively engage with
+                        Artificial Intelligence,
+                        fostering critical thinking, creativity, and responsible digital citizenship, thereby providing
+                        all learners
+                        with the opportunity and comprehensive support to thrive in an evolving, AI-driven world.
+                    </p>
+                </div>
+
+                <img src="./assets/akdeed_logo.png" alt="AKDEED logo" class="w-28 md:w-40 h-auto shrink-0 self-start md:ml-8"
+                    loading="lazy" decoding="async" />
+            </div>
         </section>
 
         <section id="principles" class="mb-12">
@@ -73,11 +86,11 @@
                     </div>
                     <p class="text-slate-600 text-sm">Promote responsible and ethical engagement with AI, fostering an understanding of intellectual property rights, preventing misuse, and building critical evaluation skills for all AI-generated content.</p>
                 </div>
-                <div class="p-6 section-card principle-card">
+                <div class="p-6 section-card principle-card place-items-center-">
                     <div class="flex items-center mb-3">
                         <h3 class="text-lg font-semibold text-slate-900">Cultural Responsiveness</h3>
                     </div>
-                    <p class="text-slate-600 text-sm">AI tools should be critically evaluated and used to affirm, rather than diminish, the diverse cultures of Alaska. Proactive measures must be taken to mitigate algorithmic biases and prevent misinterpretation, misappropriation, or the exclusion of crucial local context.</p>
+                    <p class="text-slate-600 text-sm">AI tools should be critically evaluated and used to affirm, rather than diminish, the diverse cultures of Alaska. Proactive measures must be taken to mitigate algorithmic biases and prevent misinterpretation, misappropriation, or the exclusion of crucial local context..</p>
                 </div>
             </div>
         </section>
@@ -85,79 +98,581 @@
         <section id="interactive-guidance">
             <div class="text-center mb-8">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">Explore Your Role-Specific Guidance</h2>
-                <p class="text-slate-500">Select your role to view tailored guidelines, processes, links and resources.</p>
+                <p class="text-slate-500">Select your role to view tailored guidelines, processes, and resources.</p>
             </div>
-            
+
             <div id="tabs" class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto mb-10">
-                <button data-tab="admin" class="tab-btn py-3 px-4 rounded-lg font-semibold transition-all duration-300 tab-active">For District Leaders</button>
-                <button data-tab="teacher" class="tab-btn py-3 px-4 rounded-lg font-semibold transition-all duration-300 tab-inactive">For Teachers</button>
-                <button data-tab="student" class="tab-btn py-3 px-4 rounded-lg font-semibold transition-all duration-300 tab-inactive">For Students & Families</button>
+                <button data-tab="admin"
+                    class="tab-btn py-3 px-4 rounded-lg font-semibold transition-all duration-300 tab-active">For
+                    District Leaders</button>
+                <button data-tab="teacher"
+                    class="tab-btn py-3 px-4 rounded-lg font-semibold transition-all duration-300 tab-inactive">For
+                    Teachers</button>
+                <button data-tab="student"
+                    class="tab-btn py-3 px-4 rounded-lg font-semibold transition-all duration-300 tab-inactive">For
+                    Students & Families</button>
             </div>
 
             <div id="tab-content" class="prose-custom max-w-none">
                 <div id="admin-content" class="tab-pane">
                     <div class="section-card p-6 md:p-8 mb-8">
                         <h3 class="text-2xl font-bold mb-4">Guidance for District & School Leaders</h3>
-                        <p class="mb-6">This section provides a strategic roadmap for district and school leaders to develop, implement, and sustain AI policies. It focuses on creating a robust governance structure, ensuring legal compliance, and managing the procurement of AI tools effectively. The goal is to build a systemic approach to AI integration that is safe, equitable, and aligned with your educational mission.</p>
+                        <p class="mb-6">This section provides a strategic roadmap for district and school leaders to
+                            develop, implement, and sustain AI policies. It focuses on creating a robust governance
+                            structure, ensuring legal compliance, and managing the procurement of AI tools effectively.
+                            The goal is to build a systemic approach to AI integration that is safe, equitable, and
+                            aligned with your educational mission.</p>
+
                         
-                        <h4 class="text-xl font-semibold mb-4 text-teal-700">The 6-Step Policy Development Process</h4>
-                        <p class="mb-6">Effective AI integration is a continuous journey. Use this interactive stepper to guide your district through the key phases of developing and maintaining relevant, effective AI guidelines. Click each step for more details.</p>
+                        <!-- Policy Development Process -->
+                        <h4 class="text-xl font-semibold mb-4 ">The 6-Step Policy Development Process</h4>
+                        <p class="mb-6">Effective AI integration is a continuous journey. Use this interactive stepper
+                            to guide your district through the key phases of developing and maintaining relevant,
+                            effective AI guidelines. Click each step for more details.</p>
                         <div id="stepper-container" class="mb-8 flex flex-col">
-                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent" data-index="0">
-                                <div class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">1</div>
-                                <span class="font-semibold text-slate-700 transition-colors">1. Form a Dedicated Team</span>
+                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent"
+                                data-index="0">
+                                <div
+                                    class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">
+                                    1</div>
+                                <span class="font-semibold text-slate-700 transition-colors">1. Form a Dedicated
+                                    Team</span>
                             </div>
-                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent" data-index="1">
-                                <div class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">2</div>
-                                <span class="font-semibold text-slate-700 transition-colors">2. Define a Clear Vision</span>
+                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent"
+                                data-index="1">
+                                <div
+                                    class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">
+                                    2</div>
+                                <span class="font-semibold text-slate-700 transition-colors">2. Define a Clear
+                                    Vision</span>
                             </div>
-                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent" data-index="2">
-                                <div class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">3</div>
-                                <span class="font-semibold text-slate-700 transition-colors">3. Establish Vetting & Procurement</span>
+                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent"
+                                data-index="2">
+                                <div
+                                    class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">
+                                    3</div>
+                                <span class="font-semibold text-slate-700 transition-colors">3. Establish Vetting &
+                                    Procurement</span>
                             </div>
-                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent" data-index="3">
-                                <div class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">4</div>
-                                <span class="font-semibold text-slate-700 transition-colors">4. Implement AI Literacy Training</span>
+                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent"
+                                data-index="3">
+                                <div
+                                    class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">
+                                    4</div>
+                                <span class="font-semibold text-slate-700 transition-colors">4. Implement AI Literacy
+                                    Training</span>
                             </div>
-                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent" data-index="4">
-                                <div class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">5</div>
-                                <span class="font-semibold text-slate-700 transition-colors">5. Integrate Policies Locally</span>
+                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent"
+                                data-index="4">
+                                <div
+                                    class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">
+                                    5</div>
+                                <span class="font-semibold text-slate-700 transition-colors">5. Integrate Policies
+                                    Locally</span>
                             </div>
-                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent" data-index="5">
-                                <div class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">6</div>
-                                <span class="font-semibold text-slate-700 transition-colors">6. Plan for Continuous Review</span>
+                            <div class="stepper-item flex items-center p-2 cursor-pointer border-l-2 border-transparent"
+                                data-index="5">
+                                <div
+                                    class="stepper-circle w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center mr-3 transition-colors">
+                                    6</div>
+                                <span class="font-semibold text-slate-700 transition-colors">6. Plan for Continuous
+                                    Review</span>
                             </div>
                         </div>
-                        <div id="stepper-content-wrapper" class="p-4 bg-slate-50 rounded-lg border border-slate-200 min-h-[120px]">
+                        <div id="stepper-content-wrapper"
+                            class="p-4 bg-slate-50 rounded-lg border border-slate-200 min-h-[120px]">
                             <div id="stepper-step-0" class="stepper-detail-content hidden">
-                                <p>Establish a cross-functional AI policy team with diverse stakeholders including teachers, curriculum leaders, IT staff, and administrators. This group will guide the development of a comprehensive strategy. You can find more information on this process in the <a href="https://teachai.org/toolkit" class="text-teal-600 underline">TeachAI Guidance for Schools Toolkit</a>.</p>
+                                <p>Establish a cross-functional AI policy team with diverse stakeholders including
+                                    teachers, curriculum leaders, IT staff, and administrators. This group will guide
+                                    the development of a comprehensive strategy. You can find more information on this
+                                    process in the <a href="https://teachai.org/toolkit"
+                                        class="text-teal-600 underline">TeachAI Guidance for Schools Toolkit</a>.</p>
                             </div>
                             <div id="stepper-step-1" class="stepper-detail-content hidden">
-                                <p>Develop a clear vision for AI integration that aligns with your district’s educational goals. The vision should emphasize a balanced, human-centered approach that augments human capabilities without replacing essential judgment or interaction.</p>
+                                <p>Develop a clear vision for AI integration that aligns with your district’s
+                                    educational goals. The vision should emphasize a balanced, human-centered approach
+                                    that augments human capabilities without replacing essential judgment or
+                                    interaction.</p>
                             </div>
                             <div id="stepper-step-2" class="stepper-detail-content hidden">
-                                <p>Create a robust process for evaluating AI tools for safety, efficacy, and legal compliance (FERPA, COPPA, CIPA). This includes a vendor vetting checklist to ensure that all tools adhere to high data privacy and security standards before adoption. For a practical checklist, see the <a href="https://ospi.k12.wa.us/sites/default/files/2024-07/ai-guidance_foundations.pdf" class="text-teal-600 underline">Washington OSPI Human-Centered AI Guidance</a>.</p>
+                                <p>Create a robust process for evaluating AI tools for safety, efficacy, and legal
+                                    compliance (FERPA, COPPA, CIPA). This includes a vendor vetting checklist to ensure
+                                    that all tools adhere to high data privacy and security standards before adoption.
+                                    For a practical checklist, see the <a
+                                        href="https://ospi.k12.wa.us/sites/default/files/2024-07/ai-guidance_foundations.pdf"
+                                        class="text-teal-600 underline">Washington OSPI Human-Centered AI Guidance</a>.
+                                </p>
                             </div>
                             <div id="stepper-step-3" class="stepper-detail-content hidden">
-                                <p>Develop a comprehensive AI Literacy program that provides all staff and students with an understanding of AI fundamentals, capabilities, and ethical use. This prepares everyone to engage with AI responsibly. The <a href="https://teachai.org/ailiteracy" class="text-teal-600 underline">TeachAI AI Literacy Framework</a> provides an excellent starting point.</p>
+                                <p>Develop a comprehensive AI Literacy program that provides all staff and students with
+                                    an understanding of AI fundamentals, capabilities, and ethical use. This prepares
+                                    everyone to engage with AI responsibly. The <a href="https://teachai.org/ailiteracy"
+                                        class="text-teal-600 underline">TeachAI AI Literacy Framework</a> provides an
+                                    excellent starting point.</p>
                             </div>
                             <div id="stepper-step-4" class="stepper-detail-content hidden">
-                                <p>Integrate the AI guidance into your existing district policies, such as the technology use policy, student code of conduct, and academic integrity policies, to ensure consistency and a streamlined implementation process.</p>
+                                <p>Integrate the AI guidance into your existing district policies, such as the
+                                    technology use policy, student code of conduct, and academic integrity policies, to
+                                    ensure consistency and a streamlined implementation process.</p>
                             </div>
                             <div id="stepper-step-5" class="stepper-detail-content hidden">
-                                <p>Recognize that AI is a rapidly evolving field. Establish a mechanism for ongoing research and evaluation of AI initiatives, including feedback from all stakeholders, to ensure your policies and practices remain relevant and effective over time.</p>
+                                <p>Recognize that AI is a rapidly evolving field. Establish a mechanism for ongoing
+                                    research and evaluation of AI initiatives, including feedback from all stakeholders,
+                                    to ensure your policies and practices remain relevant and effective over time.</p>
                             </div>
                         </div>
 
                         <hr class="my-8">
 
-                        <h4 class="text-xl font-semibold mb-4 text-teal-700">AI EdTech Vendor Vetting Checklist</h4>
-                        <p class="mb-6">The market for AI EdTech is expanding rapidly. A structured evaluation process is critical to ensure any tool used in your district is safe, effective, and compliant. Use this checklist to ask vendors the right questions before procurement.</p>
+                        <!-- Model Board Policies -->
+                        <h4 class="text-xl font-semibold mb-4 ">Model Board Policies</h4>
+                        <p class="mb-6">These templates provide adaptable language for districts and school boards to
+                            draft their own comprehensive AI guidelines, ensuring alignment with the statewide framework
+                            while allowing for local context.
+                        </p>
+                        <div id="accordion-container" class="space-y-3 mb-6">
+                            <!-- Model Board Policy -->
+                            <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                                <h2>
+                                    <button
+                                        class="accordion-header w-full flex justify-between items-center p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600"
+                                        aria-expanded="false" aria-controls="acc-panel-policy" id="acc-trigger-policy"
+                                        type="button">
+                                        <span class="font-semibold text-slate-800">Model Board Policy</span>
+                                        <span
+                                            class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    </button>
+                                </h2>
+
+                                <div id="acc-panel-policy" role="region" aria-labelledby="acc-trigger-policy"
+                                    class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
+                                    <h3 class="font-bold mb-2">
+                                        Model Board Policy (BP) [Number, e.g., 6161.3] Artificial Intelligence in
+                                        Education — Preamble:
+                                    </h3>
+                                    <p class="mb-6">
+                                        The [District Name] School Board recognizes Artificial Intelligence (AI) as a
+                                        transformative tool profoundly
+                                        impacting society, the economy, and the future workforce. This policy
+                                        establishes our commitment to a proactive
+                                        and thoughtful approach to AI, ensuring its responsible, ethical, and effective
+                                        integration into our K-12
+                                        education system.
+                                    </p>
+
+                                    <h4 class="font-bold mb-2">Policy Statement</h4>
+                                    <p class="mb-6">
+                                        The [District Name] School Board is committed to leveraging Artificial
+                                        Intelligence to enhance student learning
+                                        and foster staff productivity, ensuring AI serves to augment human capabilities,
+                                        critical thinking, and
+                                        creativity, rather than diminish them. We prioritize the safe, secure, and
+                                        equitable integration of AI,
+                                        upholding transparency, accountability, and academic integrity for all
+                                        stakeholders. Our approach emphasizes
+                                        developing AI literacy across our diverse community, promoting culturally
+                                        responsive AI use, and preparing every
+                                        student to ethically thrive in an AI-driven world.
+                                    </p>
+
+                                    <h4 class="font-bold mb-2">Delegation of Authority</h4>
+                                    <p class="mb-6">
+                                        The Superintendent or designee is authorized to develop and implement
+                                        administrative regulations and procedures
+                                        necessary to carry out the provisions of this policy, ensuring compliance with
+                                        all applicable laws and ethical
+                                        standards. These regulations shall provide detailed guidance on acceptable use,
+                                        professional development, data
+                                        governance, procurement, and accountability measures for all AI tools and
+                                        applications within the district.
+                                    </p>
+
+                                    <h4 class="font-bold mb-2">Policy Review</h4>
+                                    <p class="mb-6">
+                                        This policy shall be reviewed regularly by the School Board (e.g., annually by
+                                        the AI Advisory Committee) to
+                                        ensure its continued relevance and effectiveness in light of evolving AI
+                                        technologies, educational research,
+                                        legal changes, and community priorities.
+                                    </p>
+
+                                    <a href="/path/to/your/editable.docx" download
+                                        class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download
+                                        Editable Doc</a>
+                                </div>
+                            </div>
+
+                            <!-- Model Administrative Regulation -->
+                            <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                                <h2>
+                                    <button
+                                        class="accordion-header w-full flex justify-between items-center p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600"
+                                        aria-expanded="false" aria-controls="acc-panel-reg" id="acc-trigger-reg"
+                                        type="button">
+                                        <span class="font-semibold text-slate-800">Model Administrative
+                                            Regulation</span>
+                                        <span
+                                            class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    </button>
+                                </h2>
+
+                                <div id="acc-panel-reg" role="region" aria-labelledby="acc-trigger-reg"
+                                    class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
+                                    <p><strong>Authority</strong>: BP [Number, e.g., 6161.3] Artificial Intelligence in
+                                        Education</p>
+
+                                    <h4 class="font-bold mb-2">I. Purpose and Applicability</h4>
+                                    <p class="mb-6">
+                                        This Administrative Regulation provides operational guidelines for the
+                                        responsible, ethical, and effective use
+                                        of Artificial Intelligence (AI) tools within [District Name] schools. It applies
+                                        to all students, staff,
+                                        administrators, and third parties utilizing AI technologies for educational or
+                                        administrative purposes.
+                                    </p>
+
+                                    <h4 class="font-bold mb-2">II. Definitions</h4>
+                                    <ul class="list-disc list-inside ml-4 space-y-1 mb-6">
+                                        <li><strong>Artificial Intelligence (AI)</strong>: Machine-based systems capable
+                                            of making predictions, recommendations, or decisions influencing real or
+                                            virtual environments.</li>
+                                        <li><strong>Generative AI (GenAI)</strong>: A type of AI that produces novel
+                                            content (text, images, audio, video, code) from user prompts.</li>
+                                        <li><strong>AI Literacy</strong>: The knowledge and skills to understand, use,
+                                            and evaluate AI systems, including their capabilities, limitations, and
+                                            ethical implications.</li>
+                                        <li><strong>Personally Identifiable Information (PII)</strong>: Information that
+                                            directly or indirectly identifies an individual (e.g., name, student ID,
+                                            address).</li>
+                                        <li><strong>Hallucinations</strong>: AI-generated content that is factually
+                                            incorrect or misleading.</li>
+                                        <li><strong>Human Oversight</strong>: The requirement for human review,
+                                            judgment, and intervention in AI-driven processes, especially for
+                                            high-stakes decisions.</li>
+                                        <li><strong>Deepfake Technology</strong>: Digital alteration or fabrication of
+                                            images, videos, or audio to misrepresent reality.</li>
+                                    </ul>
+
+                                    <h4 class="font-bold mb-2">IV. Specific Guidelines by Audience/Role</h4>
+
+                                    <h4 class="font-bold mb-2">A. For District and School Leaders</h4>
+                                    <p class="mb-2">Leaders shall establish and maintain the framework for AI
+                                        integration.</p>
+                                    <ol class="list-decimal ml-6 space-y-1 mb-6">
+                                        <li><strong>Policy Implementation</strong>: Integrate AI guidelines into
+                                            existing district policies and communicate them clearly.</li>
+                                        <li><strong>AI Literacy &amp; Professional Development</strong>: Develop and
+                                            implement comprehensive AI Literacy programs for all stakeholders, with
+                                            continuous professional development for staff.</li>
+                                        <li><strong>AI Tool Vetting and Procurement</strong>: Establish and manage a
+                                            robust process for evaluating, approving, and maintaining an approved list
+                                            of AI tools for ethical, legal, and technical compliance, prioritizing tools
+                                            grounded in research and aligning with diverse student needs. Update
+                                            procurement processes accordingly.</li>
+                                        <li><strong>Infrastructure &amp; Access</strong>: Ensure equitable broadband
+                                            access and device availability, addressing digital divides.</li>
+                                        <li><strong>Data Governance</strong>: Implement strict protocols for managing
+                                            data with AI systems, ensuring privacy law compliance and maintaining an
+                                            inventory of all AI tools used.</li>
+                                        <li><strong>Monitoring &amp; Evaluation</strong>: Establish mechanisms for
+                                            ongoing monitoring of AI use and impact, collecting stakeholder feedback for
+                                            continuous improvement.</li>
+                                    </ol>
+
+                                    <h4 class="font-bold mb-2">B. For School Staff (Teachers and Other Personnel)</h4>
+                                    <p class="mb-2">Staff shall leverage AI to enhance instruction and productivity
+                                        while upholding ethical standards.</p>
+                                    <ol class="list-decimal ml-6 space-y-1 mb-6">
+                                        <li><strong>AI Use &amp; Curriculum</strong>: Utilize approved AI tools for
+                                            administrative tasks, content creation, differentiation, and research
+                                            assistance, ensuring alignment with curriculum standards and learning goals.
+                                        </li>
+                                        <li>
+                                            <strong>Academic Integrity &amp; Assessment</strong>:
+                                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                                <li>Clearly communicate AI use expectations for assignments (permitted
+                                                    tools, acceptable assistance, citation requirements).</li>
+                                                <li>Use an AI Acceptable Use Scale to define permissible AI assistance
+                                                    for assignments.</li>
+                                                <li>Redesign assessments to focus on student critical thinking and
+                                                    original work.</li>
+                                                <li>Do not rely solely on AI detection software for plagiarism; address
+                                                    suspected misuse as a teachable moment.</li>
+                                                <li>Use AI for formative assessment or supplemental feedback only;
+                                                    retain full professional judgment and ultimate responsibility for
+                                                    all evaluations and grades. Staff shall not solely use AI to grade
+                                                    student assignments or compose student comments for official
+                                                    records.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Data Privacy &amp; Confidentiality</strong>: Strictly adhere to
+                                            protocols prohibiting input of PII or confidential information into
+                                            unauthorized AI tools. Use only district-approved AI tools when handling
+                                            sensitive data.</li>
+                                        <li><strong>Prohibited Content/Actions</strong>: Strictly prohibit creating or
+                                            distributing Deepfake technology, false, misleading, or inappropriate
+                                            content; impersonating others; or manipulating academic/personal records
+                                            with AI. Avoid using AI to monitor classrooms in ways that compromise
+                                            privacy.</li>
+                                        <li><strong>Copyright</strong>: Comply with copyright law. Be aware of
+                                            implications for copyrighted material used as AI training data or
+                                            AI-generated output.</li>
+                                    </ol>
+
+                                    <h4 class="font-bold mb-2">For Students</h4>
+                                    <p class="mb-2">Students are responsible for using AI tools ethically, safely, and
+                                        to enhance their learning.</p>
+                                    <ol class="list-decimal ml-6 space-y-1 mb-6">
+                                        <li><strong>Permission &amp; Adherence</strong>: Obtain teacher permission
+                                            before using AI for assignments, adhering strictly to stated guidelines and
+                                            using school-approved tools when directed.</li>
+                                        <li><strong>Academic Honesty</strong>: Copying AI-generated content without
+                                            proper attribution is plagiarism. Do not over-rely on AI to bypass learning
+                                            steps (e.g., reading, analysis) or as a sole source for work.</li>
+                                        <li><strong>Fact-Checking</strong>: Always verify AI-generated information; AI
+                                            may produce inaccuracies or fictional content.</li>
+                                        <li><strong>Protect Personal Information</strong>: NEVER input Personally
+                                            Identifiable or confidential information into public AI tools; such
+                                            information may be used for AI training and is not considered private.</li>
+                                        <li><strong>Safe &amp; Ethical Use</strong>: Do not use AI to impersonate
+                                            others, or create/display harmful, deceptive, or inappropriate content
+                                            (including Deepfake technology). Report any security breaches or
+                                            inappropriate content.</li>
+                                        <li><strong>Disclosure</strong>: Clearly disclose all AI use as instructed by
+                                            your teacher.</li>
+                                    </ol>
+
+                                    <h4 class="font-bold mb-2">D. For Parents and Guardians</h4>
+                                    <p class="mb-2">Parents/Guardians are encouraged to partner with the district to
+                                        support their child's responsible AI use.</p>
+                                    <ol class="list-decimal ml-6 space-y-1 mb-6">
+                                        <li><strong>Review Guidelines</strong>: Familiarize yourself with district AI
+                                            policies and guidelines.</li>
+                                        <li><strong>Discuss with Child</strong>: Talk with your child about responsible
+                                            AI use, academic honesty, and online safety.</li>
+                                        <li><strong>Oversee Home Use</strong>: Supervise AI tool use on personal
+                                            devices, reinforcing school guidelines.</li>
+                                        <li><strong>Protect Privacy</strong>: Understand PII risks with AI and ensure
+                                            your child avoids entering sensitive information into unapproved platforms.
+                                        </li>
+                                        <li><strong>Stay Informed</strong>: Engage with district communications and
+                                            resources on AI in education.</li>
+                                    </ol>
+
+                                    <h4 class="font-bold mb-2">V. Monitoring and Review</h4>
+                                    <p>
+                                        This Administrative Regulation shall be reviewed and updated at least [e.g.,
+                                        annually / biannually in Fall and
+                                        Spring] to ensure ongoing relevance and effectiveness in response to evolving AI
+                                        technologies, educational
+                                        research, and community needs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Alaska Policies -->
+                            <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                                <h2>
+                                    <button
+                                        class="accordion-header w-full flex justify-between items-center p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600"
+                                        aria-expanded="false" aria-controls="acc-panel-ak" id="acc-trigger-ak"
+                                        type="button">
+                                        <span class="font-semibold text-slate-800">Policies in Alaska</span>
+                                        <span
+                                            class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    </button>
+                                </h2>
+
+                                <div id="acc-panel-ak" role="region" aria-labelledby="acc-trigger-ak"
+                                    class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
+                                    <p>Here is a list of districts in Alaska that currently have an AI policy at the
+                                        board or school level.</p>
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>
+                                            Fairbanks North Star Borough School District
+                                            <ul class="list-disc list-inside ml-6 space-y-1">
+                                                <li><a href="https://www.boardpolicyonline.com/?b=fairbanks&s=1900433"
+                                                        target="_blank" rel="noopener">Board Policy</a></li>
+                                                <li><a href="https://www.k12northstar.org/departments/teaching-learning/instructional-technology/ai-resources"
+                                                        target="_blank" rel="noopener">AI Resource Page</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Wrangell School District
+                                            <ul class="list-disc list-inside ml-6 space-y-1">
+                                                <li><a href="https://wpsd.us/files/user/3/file/BP-5131_9%20Academic%20Honesty.pdf"
+                                                        target="_blank" rel="noopener">Policy Manual - Academic
+                                                        Honesty</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Matanuska-Susitna Borough School District
+                                            <ul class="list-disc list-inside ml-6 space-y-1">
+                                                <li><a href="https://www.matsuk12.us/business-departments/information-technology/rup#:~:text=Section%2015.%20Artificial%20Intelligence%20%28AI%29"
+                                                        target="_blank" rel="noopener">Information Technology
+                                                        Responsible Use Policy</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Anchorage School District
+                                            <ul class="list-disc list-inside ml-6 space-y-1">
+                                                <li><a href="https://www.asdk12.org/Page/13360" target="_blank"
+                                                        rel="noopener">Dimond High School Student Handbook</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-8">
+
+
+                        <!-- AI Literacy Information -->
+                        <h4 id="ai-lit-pro-title" class="text-2xl font-bold mb-4">
+                            Establishing AI Literacy &amp; Professional Development Programs
+                        </h4>
+                        <p class="mb-6 text-slate-600">
+                            Building foundational AI understanding and skills across all roles within the
+                            educational community is crucial.
+                            This guidance outlines a phased approach for developing and implementing a comprehensive
+                            district-wide AI literacy program.
+                        </p>
+
+                        <h3 class="text-xl font-semibold mb-3 ">Development Process</h3>
+
+                        <!-- Step 1 -->
+                        <details class="group border border-slate-200 rounded-lg mb-3">
+                            <summary class="flex items-center justify-between px-4 py-3 cursor-pointer">
+                                <span class="font-semibold">Step 1: Form a Cross-Functional AI Literacy Team</span>
+                                <span
+                                    class="text-teal-600 font-bold transition-transform group-open:rotate-45">+</span>
+                            </summary>
+                            <div class="px-4 pb-4 border-t border-slate-200 bg-slate-50">
+                                <ul class="list-disc ml-6 mt-3 space-y-1">
+                                    <li>Establish a diverse team including teachers, curriculum leaders, IT staff,
+                                        administrators, and potentially students and parents. This team will
+                                        champion and guide AI literacy initiatives across the district.</li>
+                                    <li>Assign clear roles and responsibilities within the team (e.g., curriculum
+                                        integration, PD delivery, resource curation).</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <!-- Step 2 -->
+                        <details class="group border border-slate-200 rounded-lg mb-3">
+                            <summary class="flex items-center justify-between px-4 py-3 cursor-pointer">
+                                <span class="font-semibold">Step 2: Assess Current AI Literacy &amp; Needs</span>
+                                <span
+                                    class="text-teal-600 font-bold transition-transform group-open:rotate-45">+</span>
+                            </summary>
+                            <div class="px-4 pb-4 border-t border-slate-200 bg-slate-50">
+                                <p class="mt-3">
+                                    Conduct surveys and listening sessions with staff, students, and parents to
+                                    understand current AI awareness,
+                                    usage, perceived benefits, and concerns. Identify existing skills gaps and areas
+                                    where guidance is most needed.
+                                </p>
+                            </div>
+                        </details>
+
+                        <!-- Step 3 -->
+                        <details class="group border border-slate-200 rounded-lg mb-3">
+                            <summary class="flex items-center justify-between px-4 py-3 cursor-pointer">
+                                <span class="font-semibold">Step 3: Define AI Literacy Competencies by Role &amp;
+                                    Grade Level</span>
+                                <span
+                                    class="text-teal-600 font-bold transition-transform group-open:rotate-45">+</span>
+                            </summary>
+                            <div class="px-4 pb-4 border-t border-slate-200 bg-slate-50">
+                                <ul class="list-disc ml-6 mt-3 space-y-1">
+                                    <li>Develop a working definition of AI literacy for the district.</li>
+                                    <li>Outline specific, age-appropriate competencies for administrators, teachers,
+                                        students, and families.</li>
+                                    <li>Reference Alaska’s Computer Science &amp; Digital Literacy Standards and
+                                        integrate AI concepts where appropriate.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <!-- Step 4 -->
+                        <details class="group border border-slate-200 rounded-lg mb-3">
+                            <summary class="flex items-center justify-between px-4 py-3 cursor-pointer">
+                                <span class="font-semibold">Step 4: Design a Phased Professional Development
+                                    Strategy</span>
+                                <span
+                                    class="text-teal-600 font-bold transition-transform group-open:rotate-45">+</span>
+                            </summary>
+                            <div class="px-4 pb-4 border-t border-slate-200 bg-slate-50">
+                                <ul class="list-disc ml-6 mt-3 space-y-1">
+                                    <li>Begin with leaders and interested “power users,” then expand to all staff,
+                                        and finally to students and parents.</li>
+                                    <li>Mix formats: virtual modules, workshops, peer coaching, and
+                                        micro-credentials.</li>
+                                    <li>Cover AI fundamentals, ethical use, bias, data privacy, and practical
+                                        classroom/office applications.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <!-- Step 5 -->
+                        <details class="group border border-slate-200 rounded-lg mb-3">
+                            <summary class="flex items-center justify-between px-4 py-3 cursor-pointer">
+                                <span class="font-semibold">Step 5: Integrate AI Literacy into Curriculum &amp;
+                                    Practice</span>
+                                <span
+                                    class="text-teal-600 font-bold transition-transform group-open:rotate-45">+</span>
+                            </summary>
+                            <div class="px-4 pb-4 border-t border-slate-200 bg-slate-50">
+                                <p class="mt-3">
+                                    Develop strategies for integrating AI literacy across all curriculum areas.
+                                    Encourage assignments that promote
+                                    responsible AI engagement, critical evaluation of AI outputs, and
+                                    prompt-engineering skills.
+                                </p>
+                            </div>
+                        </details>
+
+                        <!-- Step 6 -->
+                        <details class="group border border-slate-200 rounded-lg">
+                            <summary class="flex items-center justify-between px-4 py-3 cursor-pointer">
+                                <span class="font-semibold">Step 6: Establish Ongoing Review &amp; Feedback
+                                    Mechanisms</span>
+                                <span
+                                    class="text-teal-600 font-bold transition-transform group-open:rotate-45">+</span>
+                            </summary>
+                            <div class="px-4 pb-4 border-t border-slate-200 bg-slate-50">
+                                <ul class="list-disc ml-6 mt-3 space-y-1">
+                                    <li>Set regular review cycles and collect multi-stakeholder feedback to refine
+                                        content and delivery.</li>
+                                    <li>Create clear feedback channels (e.g., dedicated email, anonymous surveys)
+                                        and share updates publicly.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <h3 class="text-xl font-semibold mb-3 ">Additional Resources</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><a href="https://asdn.org/">Alaska Staff Developmet Network</a></li>
+                            <li><a href="https://coeng.uaa.alaska.edu/AI/unite/#:~:text=AI%20Education%20and%20Training:%20Courses%20and%20programs%20tailored,work,%20or%20integrate%20AI%20into%20their%20daily%20lives.">UAA AI-UNITE - University of Alaska Anchorage</a></li>
+                            <li><a href="https://alaskaacsa.org/acsa-events/">ACSA - Alaska Council of School Administrators</a></li>
+                            <li><a href="">ASA - Alaska Superintendents Association</a></li>
+                        </ul>
+
+
+                        <hr class="my-8">
+
+                        <!-- EdTech Vendor Vetting -->
+                        <h4 class="text-xl font-semibold mb-4 ">AI EdTech Vendor Vetting Checklist</h4>
+                        <p class="mb-6">The market for AI EdTech is expanding rapidly. A structured evaluation process
+                            is critical to ensure any tool used in your district is safe, effective, and compliant. Use
+                            this checklist to ask vendors the right questions before procurement.</p>
                         <div id="accordion-container" class="space-y-3">
                             <div class="accordion-item border border-slate-200 rounded-lg">
                                 <div class="accordion-header flex justify-between items-center p-4">
                                     <h5 class="font-semibold text-slate-800">Business Alignment & Strategy</h5>
-                                    <span class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    <span
+                                        class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
                                 </div>
                                 <div class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
                                     <ul>
@@ -170,7 +685,8 @@
                             <div class="accordion-item border border-slate-200 rounded-lg">
                                 <div class="accordion-header flex justify-between items-center p-4">
                                     <h5 class="font-semibold text-slate-800">Technical Due Diligence</h5>
-                                    <span class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    <span
+                                        class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
                                 </div>
                                 <div class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
                                     <ul>
@@ -184,38 +700,45 @@
                             <div class="accordion-item border border-slate-200 rounded-lg">
                                 <div class="accordion-header flex justify-between items-center p-4">
                                     <h5 class="font-semibold text-slate-800">Data Governance & Privacy Standards</h5>
-                                    <span class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    <span
+                                        class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
                                 </div>
                                 <div class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
                                     <ul>
-                                        <li>Can you provide evidence of compliance with FERPA, COPPA, and other privacy laws?</li>
+                                        <li>Can you provide evidence of compliance with FERPA, COPPA, and other privacy
+                                            laws?</li>
                                         <li>What are your practices for anonymizing personal information?</li>
-                                        <li>Do your systems support user rights for data access, correction, and deletion?</li>
+                                        <li>Do your systems support user rights for data access, correction, and
+                                            deletion?</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="accordion-item border border-slate-200 rounded-lg">
                                 <div class="accordion-header flex justify-between items-center p-4">
                                     <h5 class="font-semibold text-slate-800">Support, Integration, & Flexibility</h5>
-                                    <span class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    <span
+                                        class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
                                 </div>
                                 <div class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
                                     <ul>
                                         <li>What Service Level Agreements (SLAs) do you offer?</li>
                                         <li>What onboarding and training resources are provided for educators?</li>
-                                        <li>How easily can your solution integrate with our existing technology stack?</li>
+                                        <li>How easily can your solution integrate with our existing technology stack?
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="accordion-item border border-slate-200 rounded-lg">
                                 <div class="accordion-header flex justify-between items-center p-4">
                                     <h5 class="font-semibold text-slate-800">Legal & Contractual</h5>
-                                    <span class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
+                                    <span
+                                        class="accordion-icon transform transition-transform text-teal-600 font-bold text-xl">+</span>
                                 </div>
                                 <div class="accordion-content hidden p-4 border-t border-slate-200 bg-slate-50">
                                     <ul>
                                         <li>What are the ownership terms for input data and AI-generated outputs?</li>
-                                        <li>Do contracts prevent you from using our confidential information for training?</li>
+                                        <li>Do contracts prevent you from using our confidential information for
+                                            training?</li>
                                         <li>Do terms mandate regular audits and bias monitoring?</li>
                                     </ul>
                                 </div>
@@ -227,102 +750,207 @@
                 <div id="teacher-content" class="tab-pane hidden">
                     <div class="section-card p-6 md:p-8">
                         <h3 class="text-2xl font-bold mb-4">Guidance for Teachers</h3>
-                        <p class="mb-6">This section provides practical guidance for educators on integrating AI into the classroom. It focuses on leveraging AI to enhance instruction, save time, and foster student creativity, all while navigating the new realities of academic integrity. The resources here are designed to empower you with the confidence and tools to use AI effectively and responsibly.</p>
-                        
-                        <h4 class="text-xl font-semibold mb-4 text-teal-700">The `H→AI→H` Framework for Learning</h4>
-                        <p class="mb-6">As noted in the <a href="https://ospi.k12.wa.us/sites/default/files/2024-07/ai-guidance_foundations.pdf" class="text-teal-600 underline">Washington OSPI guidance</a>, a human-centered approach to AI in education should always start with human inquiry and end with human reflection. AI is a powerful tool to be used in the middle of this process, augmenting and streamlining your work without replacing your professional judgment.</p>
-                        
-                        <h4 class="text-xl font-semibold mb-4 text-teal-700">AI Acceptable Use Scale for Assignments</h4>
-                        <p class="mb-6">This interactive scale provides a clear framework for defining how AI can be used for different assignments. Communicating the specific level to students in advance reduces ambiguity and promotes academic honesty. Click on a level to explore its details.</p>
+                        <p class="mb-6">This section provides practical guidance for educators on integrating AI into
+                            the classroom. It focuses on leveraging AI to enhance instruction, save time, and foster
+                            student creativity, all while navigating the new realities of academic integrity. The
+                            resources here are designed to empower you with the confidence and tools to use AI
+                            effectively and responsibly.</p>
+
+                        <h4 class="text-xl font-semibold mb-4 ">The `H→AI→H` Framework for Learning</h4>
+                        <p class="mb-6">As noted in the <a
+                                href="https://ospi.k12.wa.us/sites/default/files/2024-07/ai-guidance_foundations.pdf"
+                                class="text-teal-600 underline">Washington OSPI guidance</a>, a human-centered approach
+                            to AI in education should always start with human inquiry and end with human reflection. AI
+                            is a powerful tool to be used in the middle of this process, augmenting and streamlining
+                            your work without replacing your professional judgment.</p>
+
+                        <h4 class="text-xl font-semibold mb-4 ">AI Acceptable Use Scale for Assignments
+                        </h4>
+                        <p class="mb-6">This interactive scale provides a clear framework for defining how AI can be
+                            used for different assignments. Communicating the specific level to students in advance
+                            reduces ambiguity and promotes academic honesty. Click on a level to explore its details.
+                        </p>
                         <div id="ai-scale-container" class="lg:flex gap-8">
-                            <div id="ai-scale-levels" class="lg:w-1/3 flex lg:flex-col overflow-x-auto lg:overflow-x-visible mb-6 lg:mb-0">
-                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200" data-index="0">
+                            <div id="ai-scale-levels"
+                                class="lg:w-1/3 flex lg:flex-col overflow-x-auto lg:overflow-x-visible mb-6 lg:mb-0">
+                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200"
+                                    data-index="0">
                                     <h5 class="font-semibold text-slate-800">Level 0: No AI</h5>
                                 </div>
-                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200" data-index="1">
+                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200"
+                                    data-index="1">
                                     <h5 class="font-semibold text-slate-800">Level 1: AI-Assisted Planning</h5>
                                 </div>
-                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200" data-index="2">
+                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200"
+                                    data-index="2">
                                     <h5 class="font-semibold text-slate-800">Level 2: AI-Assisted Drafting</h5>
                                 </div>
-                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200" data-index="3">
+                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200"
+                                    data-index="3">
                                     <h5 class="font-semibold text-slate-800">Level 3: AI-Collaborative Creation</h5>
                                 </div>
-                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200" data-index="4">
+                                <div class="scale-level border-l-4 border-transparent p-4 cursor-pointer transition-colors duration-200"
+                                    data-index="4">
                                     <h5 class="font-semibold text-slate-800">Level 4: Full AI (Human Evaluation)</h5>
                                 </div>
                             </div>
-                            <div id="ai-scale-content-wrapper" class="lg:w-2/3 p-4 bg-slate-50 rounded-lg border border-slate-200 min-h-[300px]">
+                            <div id="ai-scale-content-wrapper"
+                                class="lg:w-2/3 p-4 bg-slate-50 rounded-lg border border-slate-200 min-h-[300px]">
                                 <div id="ai-scale-level-0" class="scale-detail-content hidden">
-                                    <h5 class="font-bold text-lg text-teal-700 mb-3">Level 0: No AI</h5>
+                                    <h5 class="font-bold text-lg  mb-3">Level 0: No AI</h5>
                                     <div class="space-y-4 text-sm">
-                                        <div><strong class="text-slate-600">Description:</strong><p class="mt-1">The assessment is completed entirely without AI assistance in a controlled environment, ensuring that students rely solely on their existing knowledge and skills.</p></div>
-                                        <div><strong class="text-slate-600">Best For:</strong><p class="mt-1">Testing foundational knowledge, ensuring authenticity of individual student capabilities, in-class supervised work.</p></div>
-                                        <div><strong class="text-slate-600">Examples:</strong><p class="mt-1">In-class essays, traditional exams, handwritten assignments.</p></div>
-                                        <div><strong class="text-slate-600">Citation Requirement:</strong><p class="mt-1">No AI use permitted.</p></div>
+                                        <div><strong class="text-slate-600">Description:</strong>
+                                            <p class="mt-1">The assessment is completed entirely without AI assistance
+                                                in a controlled environment, ensuring that students rely solely on their
+                                                existing knowledge and skills.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Best For:</strong>
+                                            <p class="mt-1">Testing foundational knowledge, ensuring authenticity of
+                                                individual student capabilities, in-class supervised work.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Examples:</strong>
+                                            <p class="mt-1">In-class essays, traditional exams, handwritten assignments.
+                                            </p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Citation Requirement:</strong>
+                                            <p class="mt-1">No AI use permitted.</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="ai-scale-level-1" class="scale-detail-content hidden">
-                                    <h5 class="font-bold text-lg text-teal-700 mb-3">Level 1: AI-Assisted Planning</h5>
+                                    <h5 class="font-bold text-lg  mb-3">Level 1: AI-Assisted Planning</h5>
                                     <div class="space-y-4 text-sm">
-                                        <div><strong class="text-slate-600">Description:</strong><p class="mt-1">AI may be used for pre-task activities such as brainstorming, outlining, and initial research. This level focuses on the effective use of AI for planning and ideation, but final submissions should be entirely human-authored.</p></div>
-                                        <div><strong class="text-slate-600">Best For:</strong><p class="mt-1">Overcoming writer's block, exploring diverse perspectives, initial project concept development.</p></div>
-                                        <div><strong class="text-slate-600">Examples:</strong><p class="mt-1">Using AI to generate a list of research topics, structuring an essay outline.</p></div>
-                                        <div><strong class="text-slate-600">Citation Requirement:</strong><p class="mt-1">Students must disclose AI use for idea generation or outlining in a footnote or as guided by the teacher.</p></div>
+                                        <div><strong class="text-slate-600">Description:</strong>
+                                            <p class="mt-1">AI may be used for pre-task activities such as
+                                                brainstorming, outlining, and initial research. This level focuses on
+                                                the effective use of AI for planning and ideation, but final submissions
+                                                should be entirely human-authored.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Best For:</strong>
+                                            <p class="mt-1">Overcoming writer's block, exploring diverse perspectives,
+                                                initial project concept development.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Examples:</strong>
+                                            <p class="mt-1">Using AI to generate a list of research topics, structuring
+                                                an essay outline.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Citation Requirement:</strong>
+                                            <p class="mt-1">Students must disclose AI use for idea generation or
+                                                outlining in a footnote or as guided by the teacher.</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="ai-scale-level-2" class="scale-detail-content hidden">
-                                    <h5 class="font-bold text-lg text-teal-700 mb-3">Level 2: AI-Assisted Drafting</h5>
+                                    <h5 class="font-bold text-lg  mb-3">Level 2: AI-Assisted Drafting</h5>
                                     <div class="space-y-4 text-sm">
-                                        <div><strong class="text-slate-600">Description:</strong><p class="mt-1">AI can be used to help draft parts of the task, including initial versions or specific sections. Students should critically evaluate and significantly revise the AI-suggested outputs to make them their own.</p></div>
-                                        <div><strong class="text-slate-600">Best For:</strong><p class="mt-1">Organizing complex information, improving logical flow, enhancing clarity of presentation, and providing feedback on writing.</p></div>
-                                        <div><strong class="text-slate-600">Examples:</strong><p class="mt-1">Using AI to refine a paragraph's structure, generating suggestions for synonyms or improving sentence flow.</p></div>
-                                        <div><strong class="text-slate-600">Citation Requirement:</strong><p class="mt-1">Students must disclose AI use for drafting and editing, specifying the nature of assistance.</p></div>
+                                        <div><strong class="text-slate-600">Description:</strong>
+                                            <p class="mt-1">AI can be used to help draft parts of the task, including
+                                                initial versions or specific sections. Students should critically
+                                                evaluate and significantly revise the AI-suggested outputs to make them
+                                                their own.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Best For:</strong>
+                                            <p class="mt-1">Organizing complex information, improving logical flow,
+                                                enhancing clarity of presentation, and providing feedback on writing.
+                                            </p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Examples:</strong>
+                                            <p class="mt-1">Using AI to refine a paragraph's structure, generating
+                                                suggestions for synonyms or improving sentence flow.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Citation Requirement:</strong>
+                                            <p class="mt-1">Students must disclose AI use for drafting and editing,
+                                                specifying the nature of assistance.</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="ai-scale-level-3" class="scale-detail-content hidden">
-                                    <h5 class="font-bold text-lg text-teal-700 mb-3">Level 3: AI-Collaborative Creation</h5>
+                                    <h5 class="font-bold text-lg  mb-3">Level 3: AI-Collaborative Creation
+                                    </h5>
                                     <div class="space-y-4 text-sm">
-                                        <div><strong class="text-slate-600">Description:</strong><p class="mt-1">AI-generated content can be included as a core part of the assignment. The assessment judges the student's ability to critically evaluate and effectively integrate AI outputs into their own work.</p></div>
-                                        <div><strong class="text-slate-600">Best For:</strong><p class="mt-1">Tasks where the ability to synthesize and critique is a key learning outcome, exploring and refining AI capabilities.</p></div>
-                                        <div><strong class="text-slate-600">Examples:</strong><p class="mt-1">Critiquing an AI-generated report, co-creating a story with AI and reflecting on the process, using AI to synthesize research and then writing a reflection on its limitations.</p></div>
-                                        <div><strong class="text-slate-600">Citation Requirement:</strong><p class="mt-1">Full disclosure of AI generation is required, including prompts used and a reflection on the outputs.</p></div>
+                                        <div><strong class="text-slate-600">Description:</strong>
+                                            <p class="mt-1">AI-generated content can be included as a core part of the
+                                                assignment. The assessment judges the student's ability to critically
+                                                evaluate and effectively integrate AI outputs into their own work.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Best For:</strong>
+                                            <p class="mt-1">Tasks where the ability to synthesize and critique is a key
+                                                learning outcome, exploring and refining AI capabilities.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Examples:</strong>
+                                            <p class="mt-1">Critiquing an AI-generated report, co-creating a story with
+                                                AI and reflecting on the process, using AI to synthesize research and
+                                                then writing a reflection on its limitations.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Citation Requirement:</strong>
+                                            <p class="mt-1">Full disclosure of AI generation is required, including
+                                                prompts used and a reflection on the outputs.</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="ai-scale-level-4" class="scale-detail-content hidden">
-                                    <h5 class="font-bold text-lg text-teal-700 mb-3">Level 4: Full AI (Human Evaluation)</h5>
+                                    <h5 class="font-bold text-lg  mb-3">Level 4: Full AI (Human Evaluation)
+                                    </h5>
                                     <div class="space-y-4 text-sm">
-                                        <div><strong class="text-slate-600">Description:</strong><p class="mt-1">AI is used creatively to enhance problem-solving, generate novel insights, or develop innovative solutions. The student's role is to act as the prompter and evaluator, directing the AI to achieve the assessment's goals.</p></div>
-                                        <div><strong class="text-slate-600">Best For:</strong><p class="mt-1">Tasks where AI is integral to the learning outcomes, promoting critical evaluation and responsible use of AI as a tool.</p></div>
-                                        <div><strong class="text-slate-600">Examples:</strong><p class="mt-1">Using AI to generate a detailed architectural design and then justifying its strengths and weaknesses, or developing a marketing campaign using AI-generated content and explaining the strategic decisions.</p></div>
-                                        <div><strong class="text-slate-600">Citation Requirement:</strong><p class="mt-1">Extensive disclosure of AI use is required, including the full conversation with the AI.</p></div>
+                                        <div><strong class="text-slate-600">Description:</strong>
+                                            <p class="mt-1">AI is used creatively to enhance problem-solving, generate
+                                                novel insights, or develop innovative solutions. The student's role is
+                                                to act as the prompter and evaluator, directing the AI to achieve the
+                                                assessment's goals.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Best For:</strong>
+                                            <p class="mt-1">Tasks where AI is integral to the learning outcomes,
+                                                promoting critical evaluation and responsible use of AI as a tool.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Examples:</strong>
+                                            <p class="mt-1">Using AI to generate a detailed architectural design and
+                                                then justifying its strengths and weaknesses, or developing a marketing
+                                                campaign using AI-generated content and explaining the strategic
+                                                decisions.</p>
+                                        </div>
+                                        <div><strong class="text-slate-600">Citation Requirement:</strong>
+                                            <p class="mt-1">Extensive disclosure of AI use is required, including the
+                                                full conversation with the AI.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <hr class="my-8">
-                        
-                        <h4 class="text-xl font-semibold mb-4 text-teal-700">Practical AI Use Cases for the Classroom</h4>
-                        <p class="mb-6">AI can significantly support teachers in developing and delivering more effective and personalized lessons, and in streamlining administrative tasks. Here are some ways AI can be a valuable tool for you, so you can spend more time on high-value interactions with students.</p>
+
+                        <h4 class="text-xl font-semibold mb-4 ">Practical AI Use Cases for the Classroom
+                        </h4>
+                        <p class="mb-6">AI can significantly support teachers in developing and delivering more
+                            effective and personalized lessons, and in streamlining administrative tasks. Here are some
+                            ways AI can be a valuable tool for you, so you can spend more time on high-value
+                            interactions with students.</p>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <h5>To Enhance Instruction:</h5>
                                 <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600">
-                                    <li><strong>Lesson Planning:</strong> Generate ideas, objectives, and activities for any subject.</li>
-                                    <li><strong>Content Creation:</strong> Create reading passages, practice problems, or visual aid descriptions.</li>
-                                    <li><strong>Differentiation:</strong> Adapt materials for varying reading levels or learning needs.</li>
-                                    <li><strong>Rubric Generation:</strong> Quickly draft clear and comprehensive rubrics for assignments.</li>
+                                    <li><strong>Lesson Planning:</strong> Generate ideas, objectives, and activities for
+                                        any subject.</li>
+                                    <li><strong>Content Creation:</strong> Create reading passages, practice problems,
+                                        or visual aid descriptions.</li>
+                                    <li><strong>Differentiation:</strong> Adapt materials for varying reading levels or
+                                        learning needs.</li>
+                                    <li><strong>Rubric Generation:</strong> Quickly draft clear and comprehensive
+                                        rubrics for assignments.</li>
                                 </ul>
                             </div>
                             <div>
                                 <h5>To Save Time:</h5>
                                 <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600">
-                                    <li><strong>Drafting Communications:</strong> Write emails to parents, class newsletters, or announcements.</li>
-                                    <li><strong>Formative Feedback:</strong> Provide initial feedback on student drafts (with human oversight).</li>
-                                    <li><strong>Administrative Tasks:</strong> Organize schedules, create reports, or manage inventory lists.</li>
-                                    <li><strong>Brainstorming:</strong> Overcome creative blocks for project ideas or discussion prompts.</li>
-                                    </ul>
+                                    <li><strong>Drafting Communications:</strong> Write emails to parents, class
+                                        newsletters, or announcements.</li>
+                                    <li><strong>Formative Feedback:</strong> Provide initial feedback on student drafts
+                                        (with human oversight).</li>
+                                    <li><strong>Administrative Tasks:</strong> Organize schedules, create reports, or
+                                        manage inventory lists.</li>
+                                    <li><strong>Brainstorming:</strong> Overcome creative blocks for project ideas or
+                                        discussion prompts.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -331,64 +959,77 @@
                 <div id="student-content" class="tab-pane hidden">
                     <div class="section-card p-6 md:p-8">
                         <h3 class="text-2xl font-bold mb-4">Guidance for Students & Families</h3>
-                        <p class="mb-6">This section helps students and families understand what AI is, how it can be used as a powerful learning tool, and how to use it responsibly. The goal is to build AI literacy and good digital citizenship habits, preparing students to navigate an AI-driven world safely and ethically.</p>
-                        
+                        <p class="mb-6">This section helps students and families understand what AI is, how it can be
+                            used as a powerful learning tool, and how to use it responsibly. The goal is to build AI
+                            literacy and good digital citizenship habits, preparing students to navigate an AI-driven
+                            world safely and ethically.</p>
+
                         <div class="grid md:grid-cols-2 gap-8">
                             <div>
-                                <h4 class="text-xl font-semibold mb-4 text-teal-700">How You Can Use AI for Learning</h4>
+                                <h4 class="text-xl font-semibold mb-4 ">How You Can Use AI for Learning
+                                </h4>
                                 <ul class="space-y-4">
                                     <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">🧠</span>
                                         <div>
                                             <h5 class="font-semibold">Be a Thought Partner</h5>
-                                            <p class="text-slate-600">Use AI to brainstorm ideas, explore different perspectives on a topic, or get help when you're stuck on a problem.</p>
+                                            <p class="text-slate-600">Use AI to brainstorm ideas, explore different
+                                                perspectives on a topic, or get help when you're stuck on a problem.</p>
                                         </div>
                                     </li>
                                     <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">📝</span>
                                         <div>
                                             <h5 class="font-semibold">Get Personalized Feedback</h5>
-                                            <p class="text-slate-600">Ask AI to explain a difficult concept in a different way or provide feedback on your writing before you submit it.</p>
+                                            <p class="text-slate-600">Ask AI to explain a difficult concept in a
+                                                different way or provide feedback on your writing before you submit it.
+                                            </p>
                                         </div>
                                     </li>
                                     <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">🎨</span>
                                         <div>
                                             <h5 class="font-semibold">Boost Your Creativity</h5>
-                                            <p class="text-slate-600">Collaborate with AI to create stories, poems, or images, and learn how to evaluate and revise AI-generated content.</p>
+                                            <p class="text-slate-600">Collaborate with AI to create stories, poems, or
+                                                images, and learn how to evaluate and revise AI-generated content.</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                             <div>
                                 <h4 class="text-xl font-semibold mb-4 text-red-600">The Golden Rules of AI Use</h4>
-                                 <ul class="space-y-4">
+                                <ul class="space-y-4">
                                     <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">🚫</span>
                                         <div>
                                             <h5 class="font-semibold">Protect Your Personal Information</h5>
-                                            <p class="text-slate-600"><strong>NEVER</strong> enter sensitive personal info (your full name, address, passwords, or student ID) into public AI tools. </p>
+                                            <p class="text-slate-600"><strong>NEVER</strong> enter sensitive personal
+                                                info (your full name, address, passwords, or student ID) into public AI
+                                                tools. </p>
                                         </div>
                                     </li>
                                     <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">💡</span>
                                         <div>
                                             <h5 class="font-semibold">Your Brain Must Do the Work</h5>
-                                            <p class="text-slate-600">AI is a helper, not a replacement for your own thinking. Submitting AI work as your own is plagiarism.</p>
+                                            <p class="text-slate-600">AI is a helper, not a replacement for your own
+                                                thinking. Submitting AI work as your own is plagiarism.</p>
                                         </div>
                                     </li>
                                     <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">✅</span>
                                         <div>
                                             <h5 class="font-semibold">Always Fact-Check AI</h5>
-                                            <p class="text-slate-600">AI can make mistakes or "hallucinate" facts. Always verify important information with reliable sources.</p>
+                                            <p class="text-slate-600">AI can make mistakes or "hallucinate" facts.
+                                                Always verify important information with reliable sources.</p>
                                         </div>
                                     </li>
-                                     <li class="flex items-start">
+                                    <li class="flex items-start">
                                         <span class="text-2xl mr-3 mt-1">🗣️</span>
                                         <div>
                                             <h5 class="font-semibold">Cite Your Source</h5>
-                                            <p class="text-slate-600">If your teacher allows AI use, you must disclose how you used it. Honesty is key to academic integrity.</p>
+                                            <p class="text-slate-600">If your teacher allows AI use, you must disclose
+                                                how you used it. Honesty is key to academic integrity.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -399,113 +1040,14 @@
             </div>
         </section>
     </main>
-    
+
     <footer class="bg-slate-800 text-slate-300 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm">
-            <p>&copy; 2024 State of Alaska Department of Education & Early Development. All Rights Reserved.</p>
-            <p class="mt-1 text-slate-400">This interactive guide is based on the "Alaska's Strategic Framework for Artificial Intelligence in K-12 Education" draft document.</p>
+            <p>&copy; 2024 State of Alaska Department of Education & Early Development.</p>
+            <p class="mt-1 text-slate-400">This interactive guide is based on the "Alaska's Strategic Framework for
+                Artificial Intelligence in K-12 Education" draft document.</p>
         </div>
     </footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-    const tabs = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(item => {
-                item.classList.remove('tab-active');
-                item.classList.add('tab-inactive');
-            });
-            tab.classList.add('tab-active');
-            tab.classList.remove('tab-inactive');
-
-            const target = tab.getAttribute('data-tab');
-            tabPanes.forEach(pane => {
-                if (pane.id === `${target}-content`) {
-                    pane.classList.remove('hidden');
-                } else {
-                    pane.classList.add('hidden');
-                }
-            });
-        });
-    });
-
-    const stepperItems = document.querySelectorAll('.stepper-item');
-    const stepperDetailContents = document.querySelectorAll('.stepper-detail-content');
-
-    function activateStep(index) {
-        stepperItems.forEach((item, i) => {
-            if (i === index) {
-                item.classList.add('stepper-item-active');
-            } else {
-                item.classList.remove('stepper-item-active');
-            }
-        });
-        stepperDetailContents.forEach((content, i) => {
-            if (i === index) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        });
-    }
-
-    stepperItems.forEach(item => {
-        item.addEventListener('click', () => {
-            activateStep(parseInt(item.dataset.index));
-        });
-    });
-    
-    activateStep(0);
-
-
-    document.querySelectorAll('.accordion-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.accordion-icon');
-            content.classList.toggle('hidden');
-            if (content.classList.contains('hidden')) {
-                icon.textContent = '+';
-                icon.classList.remove('rotate-45');
-            } else {
-                icon.textContent = '+';
-                icon.classList.add('rotate-45');
-            }
-        });
-    });
-    
-    const scaleLevels = document.querySelectorAll('.scale-level');
-    const scaleDetailContents = document.querySelectorAll('.scale-detail-content');
-
-    function activateScaleLevel(index) {
-        scaleLevels.forEach((level, i) => {
-            if (i === index) {
-                level.classList.add('scale-level-active');
-            } else {
-                level.classList.remove('scale-level-active');
-            }
-        });
-        scaleDetailContents.forEach((content, i) => {
-            if (i === index) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        });
-    }
-
-    scaleLevels.forEach(level => {
-        level.addEventListener('click', () => {
-            activateScaleLevel(parseInt(level.dataset.index));
-        });
-    });
-
-    activateScaleLevel(0);
-
-});
-</script>
 </body>
+
 </html>

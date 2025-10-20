@@ -1,0 +1,235 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence in Alaskan K-12 Education</title>
+    <style>
+        .principles-container {
+            padding: 0 20px;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .principle-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .principle-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .principle-description {
+            color: #475569;
+            font-size: 0.875rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Responsive breakpoints */
+        @media (min-width: 640px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .principles-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Center the last card when there are 7 items (odd number) */
+        @media (min-width: 1024px) {
+            .principle-card:nth-child(7) {
+                grid-column: 2 / 3;
+            }
+        }
+
+        .vision-text {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #475569;
+            padding: 0 20px;
+        }
+
+        /* Download Button Styles */
+        .download-btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #f0f7ff;
+            color: #333;
+            padding: 12px 20px;
+            border: 1px solid #b3b3b3;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: transform 0.13s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s, background 0.2s, color 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        .download-btn:hover {
+            background: #3f78a7;
+            color: #ffffff;
+            border-color: #2d5a87;
+            box-shadow: 0 4px 16px rgba(0, 102, 204, 0.10);
+            text-decoration: none;
+        }
+
+        .download-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+        }
+
+        .download-btn:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+
+        .download-btn .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.5s linear;
+            background: rgba(0, 102, 204, 0.18);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="artificial-intelligence-nav"></div>
+    <h1>Artificial Intelligence in Alaskan K-12 Education</h1>
+    <h2>Our Vision for AI in Education</h2>
+    <p>To empower every Alaskan student and educator to ethically and effectively engage with Artificial Intelligence,
+        fostering critical thinking, creativity, and responsible digital citizenship, thereby providing all learners
+        with the opportunity and comprehensive support to thrive in an evolving, AI-driven world.</p>
+
+    <div class="download-section">
+        <a href="./assets/alaska-ai-framework.pdf" download="Alaska_AI_Framework.pdf" class="download-btn">
+            <span class="download-icon">📄</span>
+            <span>Download Full AI Framework Document</span>
+            <span class="ripple"></span>
+        </a>
+    </div>
+
+    <h2>Guiding Principles</h2>
+    <div class="principles-container">
+        <div class="principles-grid">
+            <div class="principle-card">
+                <h3 class="principle-title">Human-Centered</h3>
+                <p class="principle-description">AI must augment human capabilities, critical thinking, and creativity,
+                    never replacing human judgment or decision-making in educational contexts. All AI use should begin
+                    with human inquiry and culminate in human reflection and insight.</p>
+            </div>
+
+            <div class="principle-card">
+                <h3 class="principle-title">Fair Access</h3>
+                <p class="principle-description">AI tools and education should be accessible to all students, actively
+                    mitigating broadband disparities and device availability challenges across Alaska's diverse regions.
+                </p>
+            </div>
+
+            <div class="principle-card">
+                <h3 class="principle-title">Transparency</h3>
+                <p class="principle-description">The functionalities, limitations, and potential biases of AI tools must
+                    be clearly communicated to all stakeholders. Explicit disclosure is suggested when AI is used in
+                    educational materials or assessments.</p>
+            </div>
+
+            <div class="principle-card">
+                <h3 class="principle-title">Oversight</h3>
+                <p class="principle-description">Clear lines of responsibility for AI tool selection and outcomes are
+                    vital. Robust human oversight is mandatory for any decisions that directly impact students, such as
+                    grading or disciplinary actions.</p>
+            </div>
+
+            <div class="principle-card">
+                <h3 class="principle-title">Security</h3>
+                <p class="principle-description">Rigorous protection of student data and digital well-being is
+                    non-negotiable. This includes protocols against unauthorized sharing of Personally Identifiable
+                    Information (PII) and compliance with local, state, and federal laws.</p>
+            </div>
+
+            <div class="principle-card">
+                <h3 class="principle-title">Ethical Use</h3>
+                <p class="principle-description">Promote responsible and ethical engagement with AI, fostering an
+                    understanding of intellectual property rights, preventing misuse, and building critical evaluation
+                    skills for all AI-generated content.</p>
+            </div>
+
+            <div class="principle-card">
+                <h3 class="principle-title">Cultural Responsiveness</h3>
+                <p class="principle-description">AI tools should be critically evaluated and used to affirm, rather than
+                    diminish, the diverse cultures of Alaska. Proactive measures must be taken to mitigate algorithmic
+                    biases and prevent misinterpretation, misappropriation, or the exclusion of crucial local context.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="artificial-intelligence-contact"></div>
+    <script src="ai-footer.js"></script>
+    <script src="ai-navmenu.js"></script>
+    <script>
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.download-btn')) return;
+            var target = e.target.closest('.download-btn');
+            var ripple = target.querySelector('.ripple');
+            if (!ripple) return;
+            ripple.remove();
+            var newRipple = document.createElement('span');
+            newRipple.className = 'ripple';
+            var rect = target.getBoundingClientRect();
+            var size = Math.max(rect.width, rect.height);
+            newRipple.style.width = newRipple.style.height = size + 'px';
+            newRipple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            newRipple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            target.appendChild(newRipple);
+            setTimeout(function () { newRipple.remove(); }, 500);
+        });
+    </script>
+</body>
+
+</html>
