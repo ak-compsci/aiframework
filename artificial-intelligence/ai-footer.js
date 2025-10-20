@@ -3,7 +3,7 @@
 // Edit these values to customize the contact footer for your section:
 var contactFooterConfig = {
 	// Section title
-	title: 'Office of Education Advocacy',
+	title: 'Artificial Intelligence in K-12 Education',
 	// Contact information items
 	contacts: [
 		{ 

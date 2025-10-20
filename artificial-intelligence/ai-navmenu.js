@@ -5,7 +5,7 @@ var navSectionConfig = {
 	// List of navigation items (first item is the section homepage link)
 	items: [
 		{ label: 'AI Home', url: '/artificial-intelligence', active: true },
-		{ label: 'District Guidance', url: '/artificial-intelligence/district.html', active: true },
+		{ label: 'District Guidance', url: '/artificial-intelligence/district', active: true },
 		{ label: 'Educator Guidance', url: '/artificial-intelligence/educators', active: true },
 		{ label: 'Student Guidance', url: '/artificial-intelligence/students', active: true },
 		{ label: 'Professional Development', url: '/artificial-intelligence/pd', active: true },
