@@ -1,15 +1,625 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artificial Intelligence in Alaskan K-12 Education</title>
-</head>
-<body>
-<div id="artificial-intelligence-nav"></div>
-<h2>Guidance for District & School Leaders</h2>
-<p>This section provides a strategic roadmap for district and school leaders to develop, implement, and sustain AI policies. It focuses on creating a robust governance structure, ensuring legal compliance, and managing the procurement of AI tools effectively. The goal is to build a systemic approach to AI integration that is safe, equitable, and aligned with your educational mission.</p>
+    <style>
+        /* Tab Styles */
+        .tab-container {
+            margin: 2rem 0;
+        }
 
-<script src="ai-footer.js"></script>
-<script src="ai-navmenu.js"></script>
+        .tab-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #d0d0d0;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 20px;
+            background: #f0f7ff;
+            color: #333;
+            border: 1px solid #b3b3b3;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: transform 0.13s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s, background 0.2s, color 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        .tab-btn:hover {
+            background: #3f78a7;
+            color: #ffffff;
+            border-color: #2d5a87;
+            box-shadow: 0 4px 16px rgba(0, 102, 204, 0.10);
+            text-decoration: none;
+        }
+
+        .tab-btn.active {
+            background: #2d5a87;
+            color: white;
+            border-color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        .tab-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+        }
+
+        .tab-content {
+            background: white;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            padding: 1.5rem;
+            min-height: 200px;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-btn .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.5s linear;
+            background: rgba(0, 102, 204, 0.18);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .policy-steps-accordion .policy-step-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .policy-step-header:hover .step-number {
+            background-color: #3f78a7;
+            color: white;
+        }
+
+        .policy-step-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .policy-step-content {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+
+        /* Add these styles to your existing <style> section */
+        .policy-steps-accordion {
+            margin-top: 1.5rem;
+        }
+
+        .policy-step-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .policy-step-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .step-header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            color: #64748b;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .policy-step-header:hover .step-number {
+            background-color: #3f78a7;
+            color: white;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .policy-step-icon {
+            color: #0d9488;
+            font-weight: bold;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .policy-step-content {
+            padding: 1rem;
+            border-top: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .policy-step-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .policy-step-content ul {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+
+        .policy-step-content li {
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .policy-step-content p {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .policy-step-content a {
+            color: #0d9488;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="artificial-intelligence-nav"></div>
+    <h2>Guidance for District & School Leaders</h2>
+    <p>This section provides a strategic roadmap for district and school leaders to develop, implement, and sustain AI
+        policies. It focuses on creating a robust governance structure, ensuring legal compliance, and managing the
+        procurement of AI tools effectively. The goal is to build a systemic approach to AI integration that is safe,
+        equitable, and aligned with your educational mission.</p>
+
+    <div class="tab-container">
+        <div class="tab-menu">
+            <button class="tab-btn active" data-tab="policy-development">
+                <span>Policy Development</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="board-policies">
+                <span>Model Board Policies</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="vendor-vetting">
+                <span>Vendor Vetting</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="implementation">
+                <span>Implementation Guide</span>
+                <span class="ripple"></span>
+            </button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Policy Development Section -->
+            <div id="policy-development" class="tab-pane active">
+                <h3>The 6-Step Policy Development Process</h3>
+                <p>Effective AI integration is a continuous journey. Use this guide to navigate the key phases of
+                    developing and maintaining relevant, effective AI guidelines. Click each step to expand details.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Form a Dedicated Team</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Establish a cross-functional AI policy team with diverse stakeholders including teachers,
+                                curriculum leaders, IT staff, and administrators. This group will guide the development
+                                of a comprehensive strategy.</p>
+                            <h4>Key Team Members:</h4>
+                            <ul>
+                                <li>Curriculum/Instructional Leaders</li>
+                                <li>IT/Technology Directors</li>
+                                <li>Data Privacy Officers</li>
+                                <li>Teacher Representatives</li>
+                                <li>Student/Parent Representatives</li>
+                                <li>Legal/Compliance Staff</li>
+                            </ul>
+                            <p>📋 <a href="https://teachai.org/toolkit">TeachAI Guidance for Schools Toolkit</a>
+                                provides detailed guidance on this process.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Define a Clear Vision</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Develop a clear vision for AI integration that aligns with your district's educational
+                                goals. The vision should emphasize a balanced, human-centered approach that augments
+                                human capabilities without replacing essential judgment or interaction.</p>
+                            <h4>Vision Components:</h4>
+                            <ul>
+                                <li>Alignment with district mission and values</li>
+                                <li>Clear statement of AI's role in education</li>
+                                <li>Commitment to equity and accessibility</li>
+                                <li>Emphasis on human oversight and judgment</li>
+                                <li>Focus on student learning outcomes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Establish Vetting & Procurement</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Create a robust process for evaluating AI tools for safety, efficacy, and legal
+                                compliance (FERPA, COPPA, CIPA). This includes a vendor vetting checklist to ensure that
+                                all tools adhere to high data privacy and security standards before adoption.</p>
+                            <h4>Evaluation Criteria:</h4>
+                            <ul>
+                                <li>Educational alignment and effectiveness</li>
+                                <li>Data privacy and security compliance</li>
+                                <li>Technical reliability and support</li>
+                                <li>Cost and scalability considerations</li>
+                                <li>Integration with existing systems</li>
+                            </ul>
+                            <p>📋 See the <a
+                                    href="https://ospi.k12.wa.us/sites/default/files/2024-07/ai-guidance_foundations.pdf">Washington
+                                    OSPI Human-Centered AI Guidance</a> for a practical checklist.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">4</div>
+                                <h3 class="step-title">Implement AI Literacy Training</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Develop a comprehensive AI Literacy program that provides all staff and students with an
+                                understanding of AI fundamentals, capabilities, and ethical use. This prepares everyone
+                                to engage with AI responsibly.</p>
+                            <h4>Training Components:</h4>
+                            <ul>
+                                <li>AI basics and terminology</li>
+                                <li>Practical AI tools for education</li>
+                                <li>Ethical considerations and bias awareness</li>
+                                <li>Data privacy and security best practices</li>
+                                <li>Academic integrity in the AI age</li>
+                            </ul>
+                            <p>📋 The <a href="https://teachai.org/ailiteracy">TeachAI AI Literacy Framework</a>
+                                provides an excellent starting point.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">5</div>
+                                <h3 class="step-title">Integrate Policies Locally</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Integrate the AI guidance into your existing district policies, such as the technology
+                                use policy, student code of conduct, and academic integrity policies, to ensure
+                                consistency and a streamlined implementation process.</p>
+                            <h4>Policy Integration Areas:</h4>
+                            <ul>
+                                <li>Acceptable Use Policy updates</li>
+                                <li>Academic integrity guidelines</li>
+                                <li>Data governance policies</li>
+                                <li>Professional development requirements</li>
+                                <li>Student handbook revisions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">6</div>
+                                <h3 class="step-title">Plan for Continuous Review</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Recognize that AI is a rapidly evolving field. Establish a mechanism for ongoing research
+                                and evaluation of AI initiatives, including feedback from all stakeholders, to ensure
+                                your policies and practices remain relevant and effective over time.</p>
+                            <h4>Review Process:</h4>
+                            <ul>
+                                <li>Quarterly policy team meetings</li>
+                                <li>Annual comprehensive policy review</li>
+                                <li>Stakeholder feedback collection</li>
+                                <li>Technology trend monitoring</li>
+                                <li>Legal and compliance updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Board Policy Section -->
+            <div id="board-policies" class="tab-pane">
+                <h3>Model Board Policies</h3>
+                <p>These templates provide adaptable language for districts and school boards to draft their own
+                    comprehensive AI guidelines. Each policy template includes detailed language that can be customized
+                    to meet your district's specific needs and requirements.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Model Board Policy</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Policy Framework for Artificial Intelligence in K-12 Education</strong></p>
+                            <p>This model board policy provides a comprehensive framework for governing the use of
+                                artificial intelligence technologies in educational settings. The policy addresses key
+                                areas including:</p>
+                            <ul>
+                                <li>Purpose and scope of AI use in education</li>
+                                <li>Guiding principles for ethical AI implementation</li>
+                                <li>Data privacy and security requirements</li>
+                                <li>Staff training and professional development</li>
+                                <li>Student safety and digital citizenship</li>
+                                <li>Procurement and vendor evaluation standards</li>
+                                <li>Oversight and accountability measures</li>
+                            </ul>
+                            <p><strong>Download:</strong> <a
+                                    href="https://docs.google.com/document/d/your-model-board-policy-doc-id/edit?usp=sharing"
+                                    target="_blank">View and Download Model Board Policy Template</a></p>
+                            <p><em>This template can be adapted to meet your district's specific governance structure
+                                    and educational objectives.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Model Administrative Regulation</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Administrative Regulation for AI Implementation and Management</strong></p>
+                            <p>This companion administrative regulation provides detailed procedures and guidelines for
+                                implementing the board policy. It includes specific operational guidance for:</p>
+                            <ul>
+                                <li>AI tool evaluation and approval processes</li>
+                                <li>Implementation timelines and milestones</li>
+                                <li>Staff roles and responsibilities</li>
+                                <li>Student and parent notification procedures</li>
+                                <li>Data handling and privacy protocols</li>
+                                <li>Incident reporting and response procedures</li>
+                                <li>Regular review and update schedules</li>
+                            </ul>
+                            <p><strong>Download:</strong> <a
+                                    href="https://docs.google.com/document/d/your-admin-regulation-doc-id/edit?usp=sharing"
+                                    target="_blank">View and Download Administrative Regulation Template</a></p>
+                            <p><em>This regulation provides the operational details needed to effectively implement your
+                                    board policy.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Statewide Policy Examples</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>AI Policies from Alaska School Districts</strong></p>
+                            <p>Learn from districts across Alaska that have already implemented AI policies. This
+                                collection showcases real-world examples of how various districts have adapted AI
+                                governance to meet their unique needs and circumstances.</p>
+                            <h4>Current Policy Examples:</h4>
+                            <ul>
+                                <li><strong>Fairbanks North Star Borough School District</strong> - <a
+                                        href="https://www.boardpolicyonline.com/?b=fairbanks&s=1900433"
+                                        target="_blank">AI Usage Policy 1900.433</a></li>
+                                <li><em>Additional district policies will be added as they become available</em></li>
+                            </ul>
+                            <p></p>
+                            <h4>Share Your Policy:</h4>
+                            <p>Has your district recently adopted a policy regarding AI in education? We'd love to
+                                feature it as an example for other Alaska districts.</p>
+                            <p><strong>📧 Please email your policy to:</strong> <a
+                                    href="mailto:anthony.white@alaska.gov?subject=Alaska District AI Policy Submission">anthony.white@alaska.gov</a>
+                            </p>
+                            <p>Include your district name, policy number (if applicable), and any relevant
+                                implementation details you'd like to share with other districts.</p>
+                            <div
+                                style="background-color: #f0f7ff; border-left: 4px solid #0d9488; padding: 1rem; margin-top: 1rem;">
+                                <p style="margin: 0; font-style: italic;">Building a collaborative network of AI
+                                    policies helps all Alaska districts learn from each other's experiences and best
+                                    practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vendor Vetting Section -->
+            <div id="vendor-vetting" class="tab-pane">
+                <h3>AI EdTech Vendor Vetting Checklist</h3>
+                <p>The market for AI EdTech is expanding rapidly. A structured evaluation process is critical to ensure
+                    any tool used in your district is safe, effective, and compliant.</p>
+                <h4>Key Evaluation Areas:</h4>
+                <ul>
+                    <li><strong>Business Alignment & Strategy</strong> - Does this align with educational goals?</li>
+                    <li><strong>Technical Due Diligence</strong> - What AI models are used and how are they trained?
+                    </li>
+                    <li><strong>Data Governance & Privacy</strong> - FERPA, COPPA compliance and data handling practices
+                    </li>
+                    <li><strong>Support & Integration</strong> - Training resources and system compatibility</li>
+                    <li><strong>Legal & Contractual</strong> - Data ownership and usage rights</li>
+                </ul>
+            </div>
+
+            <div id="implementation" class="tab-pane">
+                <h3>Implementation Guide</h3>
+                <p>Practical steps for rolling out AI policies and practices across your district.</p>
+                <h4>Phase 1: Foundation (Months 1-3)</h4>
+                <ul>
+                    <li>Assemble your AI policy team</li>
+                    <li>Conduct current state assessment</li>
+                    <li>Develop initial policy framework</li>
+                </ul>
+                <h4>Phase 2: Pilot & Training (Months 4-6)</h4>
+                <ul>
+                    <li>Launch pilot programs with select schools</li>
+                    <li>Implement professional development</li>
+                    <li>Establish feedback mechanisms</li>
+                </ul>
+                <h4>Phase 3: Scale & Monitor (Months 7-12)</h4>
+                <ul>
+                    <li>District-wide policy rollout</li>
+                    <li>Ongoing monitoring and evaluation</li>
+                    <li>Regular policy updates and refinements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="artificial-intelligence-contact"></div>
+
+    <script src="ai-footer.js"></script>
+    <script src="ai-navmenu.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs and panes
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+
+        // Ripple effect for tabs
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.tab-btn')) return;
+            var target = e.target.closest('.tab-btn');
+            var ripple = target.querySelector('.ripple');
+            if (!ripple) return;
+            ripple.remove();
+            var newRipple = document.createElement('span');
+            newRipple.className = 'ripple';
+            var rect = target.getBoundingClientRect();
+            var size = Math.max(rect.width, rect.height);
+            newRipple.style.width = newRipple.style.height = size + 'px';
+            newRipple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            newRipple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            target.appendChild(newRipple);
+            setTimeout(function () { newRipple.remove(); }, 500);
+        });
+
+        // Policy Steps Accordion functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const policyStepHeaders = document.querySelectorAll('.policy-step-header');
+
+            policyStepHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const stepItem = this.parentElement;
+                    const content = stepItem.querySelector('.policy-step-content');
+                    const icon = stepItem.querySelector('.policy-step-icon');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    if (isOpen) {
+                        // Close this step
+                        content.classList.add('hidden');
+                        icon.textContent = '+';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Open this step
+                        content.classList.remove('hidden');
+                        icon.textContent = '−';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
