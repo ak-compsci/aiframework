@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				cursor: pointer;
 				display: inline-block;
 				text-align: center;
-				text-decoration: underline;
+				text-decoration: none;
 				letter-spacing: 0.01em;
 				z-index: 1;
 			}
