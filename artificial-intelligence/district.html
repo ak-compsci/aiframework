@@ -29,7 +29,7 @@
             border-radius: 0;
             font-size: 14px;
             font-weight: 700;
-            text-decoration: underline;
+            text-decoration: none;
             cursor: pointer;
             transition: transform 0.13s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s, background 0.2s, color 0.2s;
             letter-spacing: 0.01em;
@@ -517,19 +517,17 @@
                                 <li><em>Additional district policies will be added as they become available</em></li>
                             </ul>
                             <p></p>
-                            <h4>Share Your Policy:</h4>
-                            <p>Has your district recently adopted a policy regarding AI in education? We'd love to
-                                feature it as an example for other Alaska districts.</p>
-                            <p><strong>📧 Please email your policy to:</strong> <a
-                                    href="mailto:anthony.white@alaska.gov?subject=Alaska District AI Policy Submission">anthony.white@alaska.gov</a>
-                            </p>
-                            <p>Include your district name, policy number (if applicable), and any relevant
-                                implementation details you'd like to share with other districts.</p>
+
                             <div
                                 style="background-color: #f0f7ff; border-left: 4px solid #0d9488; padding: 1rem; margin-top: 1rem;">
-                                <p style="margin: 0; font-style: italic;">Building a collaborative network of AI
-                                    policies helps all Alaska districts learn from each other's experiences and best
-                                    practices.</p>
+                                <h4>Share Your Policy:</h4>
+                                <p>Has your district recently adopted a policy regarding AI in education? We'd love to
+                                    feature it as an example for other Alaska districts.</p>
+                                <p><strong>📧 Please email your policy to:</strong> <a
+                                        href="mailto:anthony.white@alaska.gov?subject=Alaska District AI Policy Submission">anthony.white@alaska.gov</a>
+                                </p>
+                                <p>Include your district name, policy number (if applicable), and any relevant
+                                    implementation details you'd like to share with other districts.</p>
                             </div>
                         </div>
                     </div>
@@ -540,40 +538,371 @@
             <div id="vendor-vetting" class="tab-pane">
                 <h3>AI EdTech Vendor Vetting Checklist</h3>
                 <p>The market for AI EdTech is expanding rapidly. A structured evaluation process is critical to ensure
-                    any tool used in your district is safe, effective, and compliant.</p>
-                <h4>Key Evaluation Areas:</h4>
-                <ul>
-                    <li><strong>Business Alignment & Strategy</strong> - Does this align with educational goals?</li>
-                    <li><strong>Technical Due Diligence</strong> - What AI models are used and how are they trained?
-                    </li>
-                    <li><strong>Data Governance & Privacy</strong> - FERPA, COPPA compliance and data handling practices
-                    </li>
-                    <li><strong>Support & Integration</strong> - Training resources and system compatibility</li>
-                    <li><strong>Legal & Contractual</strong> - Data ownership and usage rights</li>
-                </ul>
+                    any tool used in your district is safe, effective, and compliant. Use this comprehensive checklist
+                    to evaluate AI tools before implementation.</p>
+                <p><strong>📋 Download:</strong> <a
+                        href="https://docs.google.com/document/d/1-fh7Gi_Y7Hf4GtYYQHWuQzhP9y4pP6d1xWzKt6XVxVE/edit?usp=sharing"
+                        target="_blank">AI Vendor Evaluation Checklist - Page Format</a> | <a
+                        href="https://docs.google.com/document/d/1ONyyX-Oi0SDhc0IBAty2G0A2Vu_z1PWYChFRe_6_IS4/edit?usp=sharing"
+                        target="_blank">AI Tool Evaluation Checklist - Table Format</a></p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Business Alignment & Strategy</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Does this AI tool align with your educational goals and district
+                                    strategy?</strong></p>
+                            <h4>Key Questions to Consider:</h4>
+                            <ul>
+                                <li>How does this tool support specific curriculum standards or learning objectives?
+                                </li>
+                                <li>What educational problem does this solve that existing tools cannot?</li>
+                                <li>How will this tool enhance (not replace) teacher instruction?</li>
+                                <li>What is the expected return on investment in terms of student outcomes?</li>
+                                <li>How does this align with your district's equity and inclusion goals?</li>
+                            </ul>
+                            <p><strong>Documentation Required:</strong> Vendor should provide clear use cases, research
+                                on educational effectiveness, and alignment with pedagogical best practices.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Technical Due Diligence</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Understanding the AI technology behind the tool</strong></p>
+                            <h4>Critical Technical Areas:</h4>
+                            <ul>
+                                <li><strong>AI Model Information:</strong> What models are used (GPT, custom, etc.) and
+                                    how are they trained?</li>
+                                <li><strong>Data Sources:</strong> What data was used to train the AI and is it
+                                    appropriate for K-12 education?</li>
+                                <li><strong>Bias Mitigation:</strong> What steps has the vendor taken to identify and
+                                    reduce algorithmic bias?</li>
+                                <li><strong>Accuracy & Reliability:</strong> What is the tool's accuracy rate and how
+                                    are errors handled?</li>
+                                <li><strong>Updates & Maintenance:</strong> How frequently is the AI model updated and
+                                    improved?</li>
+                            </ul>
+                            <p><strong>Red Flags:</strong> Vendors who cannot explain their AI technology, refuse to
+                                discuss bias mitigation, or make unrealistic accuracy claims.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Data Governance & Privacy</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Ensuring compliance with FERPA, COPPA, and state data privacy laws</strong></p>
+                            <h4>Essential Privacy Protections:</h4>
+                            <ul>
+                                <li><strong>FERPA Compliance:</strong> Signed FERPA agreements and clear data handling
+                                    procedures</li>
+                                <li><strong>COPPA Compliance:</strong> Special protections for students under 13</li>
+                                <li><strong>Data Minimization:</strong> Tool only collects data necessary for
+                                    educational purposes</li>
+                                <li><strong>Data Retention:</strong> Clear policies on how long data is stored and
+                                    deletion procedures</li>
+                                <li><strong>Data Location:</strong> Where is student data stored and processed?</li>
+                                <li><strong>Third-Party Sharing:</strong> Is data shared with any third parties?</li>
+                            </ul>
+                            <h4>Required Documentation:</h4>
+                            <ul>
+                                <li>Privacy policy written in plain language</li>
+                                <li>Data Processing Agreement (DPA)</li>
+                                <li>Security audit reports or certifications</li>
+                                <li>Incident response procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">4</div>
+                                <h3 class="step-title">Support & Integration</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Evaluating implementation support and system compatibility</strong></p>
+                            <h4>Implementation Considerations:</h4>
+                            <ul>
+                                <li><strong>Training Resources:</strong> What professional development is provided for
+                                    educators?</li>
+                                <li><strong>Technical Support:</strong> Quality and availability of customer support
+                                </li>
+                                <li><strong>System Integration:</strong> Compatibility with existing LMS, SIS, and other
+                                    tools</li>
+                                <li><strong>Accessibility:</strong> Does the tool meet ADA and Section 508 requirements?
+                                </li>
+                                <li><strong>Multi-language Support:</strong> Available in languages spoken by your
+                                    student population</li>
+                                <li><strong>Device Compatibility:</strong> Works on devices available to students</li>
+                            </ul>
+                            <h4>Ongoing Support:</h4>
+                            <ul>
+                                <li>Response times for technical issues</li>
+                                <li>Regular training updates and resources</li>
+                                <li>User community or support forums</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">5</div>
+                                <h3 class="step-title">Legal & Contractual</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Protecting your district through proper legal agreements</strong></p>
+                            <h4>Critical Contract Elements:</h4>
+                            <ul>
+                                <li><strong>Data Ownership:</strong> District retains ownership of all student data</li>
+                                <li><strong>Usage Rights:</strong> Clear limitations on how vendor can use district data
+                                </li>
+                                <li><strong>Liability & Indemnification:</strong> Vendor liability for data breaches or
+                                    misuse</li>
+                                <li><strong>Termination Clauses:</strong> Data return/deletion procedures upon contract
+                                    end</li>
+                                <li><strong>Service Level Agreements:</strong> Uptime guarantees and performance
+                                    standards</li>
+                                <li><strong>Intellectual Property:</strong> Ownership of student-created content</li>
+                            </ul>
+                            <h4>Financial Considerations:</h4>
+                            <ul>
+                                <li>Total cost of ownership including training and support</li>
+                                <li>Pricing transparency and scalability</li>
+                                <li>Payment terms and cancellation policies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">6</div>
+                                <h3 class="step-title">Pilot & Evaluation Process</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Testing AI tools before district-wide implementation</strong></p>
+                            <h4>Recommended Pilot Process:</h4>
+                            <ul>
+                                <li><strong>Limited Scope:</strong> Start with 1-2 schools or classrooms</li>
+                                <li><strong>Clear Metrics:</strong> Define success criteria before the pilot begins</li>
+                                <li><strong>Teacher Feedback:</strong> Regular check-ins with participating educators
+                                </li>
+                                <li><strong>Student Impact:</strong> Monitor both academic and engagement outcomes</li>
+                                <li><strong>Technical Performance:</strong> Track uptime, speed, and user experience
+                                </li>
+                            </ul>
+                            <h4>Evaluation Criteria:</h4>
+                            <ul>
+                                <li>Ease of use for teachers and students</li>
+                                <li>Measurable impact on learning outcomes</li>
+                                <li>Integration with existing workflows</li>
+                                <li>Technical reliability and performance</li>
+                                <li>Value for investment</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> Allow at least 6-8 weeks for a meaningful pilot evaluation
+                                with comprehensive feedback collection.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Implementation section -->
+            <!-- Implementation section -->
             <div id="implementation" class="tab-pane">
                 <h3>Implementation Guide</h3>
-                <p>Practical steps for rolling out AI policies and practices across your district.</p>
-                <h4>Phase 1: Foundation (Months 1-3)</h4>
-                <ul>
-                    <li>Assemble your AI policy team</li>
-                    <li>Conduct current state assessment</li>
-                    <li>Develop initial policy framework</li>
-                </ul>
-                <h4>Phase 2: Pilot & Training (Months 4-6)</h4>
-                <ul>
-                    <li>Launch pilot programs with select schools</li>
-                    <li>Implement professional development</li>
-                    <li>Establish feedback mechanisms</li>
-                </ul>
-                <h4>Phase 3: Scale & Monitor (Months 7-12)</h4>
-                <ul>
-                    <li>District-wide policy rollout</li>
-                    <li>Ongoing monitoring and evaluation</li>
-                    <li>Regular policy updates and refinements</li>
-                </ul>
+                <p>Practical steps for rolling out AI policies and practices across your district. This phased approach
+                    ensures systematic implementation while allowing for continuous learning and adjustment.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Phase 1: Foundation (Months 1-3)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Establishing the groundwork for successful AI integration</strong></p>
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li><strong>Assemble your AI policy team</strong> - Include diverse stakeholders from
+                                    curriculum, IT, legal, and classroom educators</li>
+                                <li><strong>Conduct current state assessment</strong> - Inventory existing technology,
+                                    policies, and staff readiness</li>
+                                <li><strong>Develop initial policy framework</strong> - Create draft policies aligned
+                                    with district values and educational goals</li>
+                                <li><strong>Stakeholder engagement</strong> - Hold listening sessions with teachers,
+                                    parents, and students</li>
+                                <li><strong>Budget planning</strong> - Identify funding sources and create
+                                    implementation budget</li>
+                            </ul>
+                            <h4>Deliverables:</h4>
+                            <ul>
+                                <li>AI implementation team roster and charter</li>
+                                <li>Current state assessment report</li>
+                                <li>Draft AI policy framework</li>
+                                <li>Stakeholder feedback summary</li>
+                                <li>Implementation budget and timeline</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Phase 2: Pilot & Training (Months 4-6)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Testing approaches with limited scope to learn and refine</strong></p>
+                            <h4>Implementation Activities:</h4>
+                            <ul>
+                                <li><strong>Launch pilot programs</strong> - Select 2-3 schools or departments for
+                                    initial implementation</li>
+                                <li><strong>Professional development rollout</strong> - Begin AI literacy training for
+                                    pilot participants</li>
+                                <li><strong>Vendor pilots</strong> - Test selected AI tools with small groups</li>
+                                <li><strong>Policy refinement</strong> - Update policies based on pilot learnings</li>
+                                <li><strong>Feedback mechanisms</strong> - Establish regular check-ins and data
+                                    collection</li>
+                            </ul>
+                            <h4>Success Metrics:</h4>
+                            <ul>
+                                <li>Teacher confidence and comfort with AI tools</li>
+                                <li>Student engagement and learning outcomes</li>
+                                <li>Technical performance and reliability</li>
+                                <li>Policy effectiveness and clarity</li>
+                                <li>Cost-effectiveness of selected tools</li>
+                            </ul>
+                            <p><strong>Critical:</strong> Document lessons learned and best practices for scaling in
+                                Phase 3.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Phase 3: Scale & Monitor (Months 7-12)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>District-wide rollout with continuous monitoring and improvement</strong></p>
+                            <h4>Scaling Activities:</h4>
+                            <ul>
+                                <li><strong>District-wide policy rollout</strong> - Implement refined policies across
+                                    all schools</li>
+                                <li><strong>Comprehensive training program</strong> - AI literacy for all staff and
+                                    students</li>
+                                <li><strong>Technology deployment</strong> - Roll out approved AI tools district-wide
+                                </li>
+                                <li><strong>Support system activation</strong> - Launch help desk, peer support
+                                    networks, and resources</li>
+                                <li><strong>Communication campaign</strong> - Keep all stakeholders informed of progress
+                                    and changes</li>
+                            </ul>
+                            <h4>Monitoring & Evaluation:</h4>
+                            <ul>
+                                <li><strong>Regular policy reviews</strong> - Quarterly assessment of policy
+                                    effectiveness</li>
+                                <li><strong>Performance tracking</strong> - Monitor academic, engagement, and
+                                    operational metrics</li>
+                                <li><strong>Stakeholder feedback</strong> - Ongoing surveys and focus groups</li>
+                                <li><strong>Technology monitoring</strong> - Track usage, performance, and security</li>
+                                <li><strong>Continuous improvement</strong> - Regular updates based on data and feedback
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">4</div>
+                                <h3 class="step-title">Change Management Strategies</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Essential strategies for managing the human side of AI implementation</strong>
+                            </p>
+                            <h4>Building Buy-in:</h4>
+                            <ul>
+                                <li><strong>Start with willing participants</strong> - Identify and support early
+                                    adopters</li>
+                                <li><strong>Showcase quick wins</strong> - Highlight early successes and positive
+                                    outcomes</li>
+                                <li><strong>Address concerns directly</strong> - Provide clear answers about job
+                                    security and student privacy</li>
+                                <li><strong>Provide adequate support</strong> - Ensure training and help are readily
+                                    available</li>
+                                <li><strong>Celebrate progress</strong> - Recognize and reward successful implementation
+                                </li>
+                            </ul>
+                            <h4>Common Challenges & Solutions:</h4>
+                            <ul>
+                                <li><strong>Resistance to change:</strong> Focus on benefits and provide hands-on
+                                    training</li>
+                                <li><strong>Technology anxiety:</strong> Offer peer support and step-by-step guidance
+                                </li>
+                                <li><strong>Privacy concerns:</strong> Provide transparent information about data
+                                    protection</li>
+                                <li><strong>Workload increases:</strong> Phase implementation to allow time for
+                                    adjustment</li>
+                                <li><strong>Inconsistent usage:</strong> Create accountability measures and support
+                                    systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="background-color: #f0f7ff; border-left: 4px solid #0d9488; padding: 1rem; margin-top: 2rem;">
+                    <h4 style="margin-top: 0;">📚 Additional Implementation Resources</h4>
+                    <p><strong>Comprehensive Guides for AI Implementation:</strong></p>
+                    <ul style="margin-bottom: 1rem;">
+                        <li><strong><a
+                                    href="https://www.ilogroup.com/wp-content/uploads/2024/03/Framework-for-Implementing-Artificial-Intelligence-AI-in-K-12-Education_v1.0.pdf"
+                                    target="_blank">Framework for Implementing AI in K-12 Education</a></strong> - ILO
+                            Group</li>
+                        <li><strong><a
+                                    href="https://www.pgcps.org/globalassets/offices/information-technology/docs---information-technology/artificial-intelligence-ai-implementation-guide.pdf"
+                                    target="_blank">AI Implementation Guide</a></strong> - Prince George's County Public
+                            Schools & Harvard Graduate School of Education</li>
+                        <li><strong><a href="https://www.teachai.org/toolkit" target="_blank">AI Guidance for Schools
+                                    Toolkit</a></strong> - TeachAI</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

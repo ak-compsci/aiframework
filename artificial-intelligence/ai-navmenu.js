@@ -1,17 +1,47 @@
 // Generic Navigation Dropdown Widget
 // --- CONFIGURATION ---
+
+// Generic Navigation Dropdown Widget
+// --- CONFIGURATION ---
+// Edit these values to customize the nav for your section:
+
+// Detect if we're in local development or live site
+var isLocalDev = window.location.hostname === 'localhost' || 
+                 window.location.hostname === '127.0.0.1' || 
+                 window.location.protocol === 'file:';
+
 // Edit these values to customize the nav for your section:
 var navSectionConfig = {
 	// List of navigation items (first item is the section homepage link)
 	items: [
-		{ label: 'AI Home', url: '/artificial-intelligence', active: true },
-		{ label: 'District Guidance', url: '/artificial-intelligence/district', active: true },
-		{ label: 'Educator Guidance', url: '/artificial-intelligence/educators', active: true },
-		{ label: 'Student Guidance', url: '/artificial-intelligence/students', active: true },
-		{ label: 'Professional Development', url: '/artificial-intelligence/pd', active: true },
-	],
-	// Optional: Only show nav on these path substrings (leave empty to always show)
-	showOnPaths: []
+        { 
+            label: 'AI Home', 
+            url: isLocalDev ? './index.html' : '/artificial-intelligence', 
+            active: true 
+        },
+        { 
+            label: 'District Guidance', 
+            url: isLocalDev ? './district.html' : '/artificial-intelligence/district', 
+            active: true 
+        },
+        { 
+            label: 'Educator Guidance', 
+            url: isLocalDev ? './educators.html' : '/artificial-intelligence/educators', 
+            active: true 
+        },
+        { 
+            label: 'Student Guidance', 
+            url: isLocalDev ? './students.html' : '/artificial-intelligence/students', 
+            active: true 
+        },
+        { 
+            label: 'Professional Development', 
+            url: isLocalDev ? './pd.html' : '/artificial-intelligence/pd', 
+            active: true 
+        },
+    ],
+    // Optional: Only show nav on these path substrings (leave empty to always show)
+    showOnPaths: []
 };
 
 // --- GENERIC WIDGET CODE ---
