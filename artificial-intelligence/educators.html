@@ -1,0 +1,1024 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educator Guidance - AI in Alaskan K-12 Education</title>
+    <style>
+        /* Tab Styles */
+        .tab-container {
+            margin: 2rem 0;
+        }
+
+        .tab-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #d0d0d0;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 20px;
+            background: #f0f7ff;
+            color: #333;
+            border: 1px solid #b3b3b3;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.13s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s, background 0.2s, color 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        .tab-btn:hover {
+            background: #3f78a7;
+            color: #ffffff;
+            border-color: #2d5a87;
+            box-shadow: 0 4px 16px rgba(0, 102, 204, 0.10);
+            text-decoration: none;
+        }
+
+        .tab-btn.active {
+            background: #2d5a87;
+            color: white;
+            border-color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        .tab-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+        }
+
+        .tab-content {
+            background: white;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            padding: 1.5rem;
+            min-height: 200px;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-btn .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.5s linear;
+            background: rgba(0, 102, 204, 0.18);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .policy-steps-accordion .policy-step-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .policy-step-header:hover .step-number {
+            background-color: #3f78a7;
+            color: white;
+        }
+
+        .policy-step-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .policy-step-content {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+
+            to {
+                opacity: 1;
+                max-height: 1000px;
+                /* Increased max-height for longer content */
+            }
+        }
+
+        /* Accordion Styles */
+        .policy-steps-accordion {
+            margin-top: 1.5rem;
+        }
+
+        .policy-step-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .policy-step-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .step-header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            color: #64748b;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            /* Prevents number from shrinking */
+        }
+
+        .policy-step-header:hover .step-number {
+            background-color: #3f78a7;
+            color: white;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .policy-step-icon {
+            color: #0d9488;
+            font-weight: bold;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .policy-step-content {
+            padding: 1rem;
+            border-top: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            animation: slideDown 0.3s ease-out;
+            overflow: hidden;
+            /* Needed for animation */
+        }
+
+        .policy-step-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
+            /* Adjusted margin */
+        }
+
+        .policy-step-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .policy-step-content ul {
+            list-style-type: disc !important;
+            padding-left: 1.25rem;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-step-content li {
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .policy-step-content p {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .policy-step-content a {
+            color: #0d9488;
+            text-decoration: underline;
+        }
+
+        .policy-step-content a:hover {
+            color: #0F766E;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Utility class for a resource box */
+        .resource-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0d9488;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav Menu -->
+    <div id="artificial-intelligence-nav"></div>
+
+    <h2>Guidance for Educators</h2>
+    <p>This section provides practical resources and strategies for integrating AI into your classroom. It focuses on
+        enhancing instruction, fostering AI literacy, and navigating the new landscape of teaching and learning, all in
+        alignment with the Alaska K12 AI Framework.</p>
+
+    <div class="tab-container">
+        <div class="tab-menu">
+            <button class="tab-btn active" data-tab="ai-literacy">
+                <span>AI Literacy & Basics</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="instructional-strategies">
+                <span>Instructional Strategies</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="lesson-assessment">
+                <span>Lesson Planning & Assessment</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="academic-integrity">
+                <span>Academic Integrity & Ethics</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="tools-resources">
+                <span>Tools & Resources</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="professional-practices">
+                <span>Professional Teaching Practices</span>
+                <span class="ripple"></span>    
+            </button>
+        </div>
+
+        <div class="tab-content">
+            <!-- AI Literacy & Basics -->
+            <div id="ai-literacy" class="tab-pane active">
+                <h3>Building Foundational AI Knowledge</h3>
+                <p>Understanding what AI is, how it works, and why it's important is the first step to using it
+                    effectively and ethically in the classroom. Click each step to expand details.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">What is AI? (For a Teacher)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>At its core, Artificial Intelligence refers to systems that can perform tasks that
+                                typically require human intelligence, like learning, reasoning, and problem-solving.
+                                Generative AI (GenAI) is a type of AI that can create new content, such as text, images,
+                                and code, based on the patterns it learned from vast amounts of data.</p>
+                            <p>Think of it as an incredibly advanced autocomplete or a creative partner that can
+                                generate ideas, but which requires human guidance and fact-checking.</p>
+                            <h4>Key Resources:</h4>
+                            <ul>
+                                <li><strong>Course:</strong> <a
+                                        href="https://www.commonsense.org/education/training/ai-basics-for-k-12-teachers"
+                                        target="_blank">AI Basics for K–12 Teachers - Common Sense Media</a> - Designed
+                                    for anyone who wants to understand the basics of generative AI and its impact on
+                                    education.</li>
+                                <li><strong>Video:</strong> <a href="https://www.teachai.org/ai-101-for-teachers"
+                                        target="_blank">AI 101 for Teachers - code.org</a> - A foundational online
+                                    learning series for any teacher and educator interested in the groundbreaking world
+                                    of artificial intelligence (AI) and its transformative potential in education.</li>
+                                <li><strong>Course:</strong> <a href="https://grow.google/ai-for-educators/"
+                                        target="_blank">Generative AI for Educators with Gemini - Google</a> - A course
+                                    designed to help educators understand and implement Google's Gemini generative AI in
+                                    their teaching.</li>
+                                <li><strong>Course:</strong> <a
+                                        href="https://learn.microsoft.com/en-us/training/paths/ai-education/"
+                                        target="_blank">AI Education - Microsoft</a> - A comprehensive learning path for
+                                    educators to understand and integrate AI into their teaching practices.</li>
+                                <li><strong>Blog:</strong> <a
+                                        href="https://digitalpromise.org/2021/06/02/artificial-intelligence-101-covering-the-basics-for-educators/"
+                                        target="_blank">Artificial Intelligence 101: Covering the Basics for Educators -
+                                        Digital Promise</a> - An overview of AI concepts tailored for educators.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Key Concepts: Hallucinations & Bias</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>It's crucial to understand AI's limitations to use it safely and to teach students to be
+                                critical consumers of AI-generated content.</p>
+                            <h4>Key Limitations:</h4>
+                            <ul>
+                                <li><strong>Hallucinations:</strong> AI can "hallucinate" or make up information that
+                                    sounds plausible but is partially or completely false. It may invent facts, dates,
+                                    or sources. <strong>Always fact-check AI outputs.</strong></li>
+                                <li><strong>Bias:</strong> AI models are trained on data from the internet, which
+                                    contains human biases (racial, cultural, gender, etc.). The AI can learn and
+                                    reproduce these biases in its responses.</li>
+                                <li><strong>Misinformation:</strong> Because AI can generate realistic-sounding text, it
+                                    can be used to create and spread misinformation quickly.</li>
+                            </ul>
+                            <p>As the AK K12 AI Framework states, we must empower users "to identify, question, and
+                                compensate for biases and misinformation in AI outputs."</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Why Teach AI Literacy?</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>AI isn't just a tool; it's a fundamental part of the modern world. Teaching AI literacy
+                                is essential for developing responsible digital citizenship and critical thinking
+                                skills.</p>
+                            <h4>AI Literacy Helps Students:</h4>
+                            <ul>
+                                <li>Understand the technology that is shaping their world.</li>
+                                <li>Critically evaluate information they encounter online.</li>
+                                <li>Learn to use AI as a tool for creativity and problem-solving, not just a shortcut.
+                                </li>
+                                <li>Protect their personal data and privacy.</li>
+                                <li>Prepare for future careers where AI will be commonplace.</li>
+                            </ul>
+                            <p><strong>📋 Resource:</strong> <a
+                                    href="https://www.commonsense.org/education/digital-citizenship/ai-literacy"
+                                    target="_blank">Common Sense Media - AI Literacy Resources</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructional Strategies -->
+            <div id="instructional-strategies" class="tab-pane">
+                <h3>AI for Teaching & Learning</h3>
+                <p>AI can be a powerful assistant for educators, helping to personalize learning and save time on
+                    administrative tasks. Here are practical ways to leverage AI in your instruction.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Personalizing Learning & Differentiation</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Use AI to create tailored content for diverse learners. This can help you meet students
+                                where they are without having to create dozens of lesson versions from scratch.</p>
+                            <h4>Example Prompts:</h4>
+                            <ul>
+                                <li>"Take this 10th-grade level text about the American Revolution and rewrite it at a
+                                    5th-grade reading level. Include a list of key vocabulary words and their
+                                    definitions."</li>
+                                <li>"Generate 10 practice math problems on single-digit multiplication. Include 3
+                                    challenge problems that involve two steps."</li>
+                                <li>"Create a study guide for a test on photosynthesis. Include sections for key
+                                    concepts, vocabulary, and 5 short-answer review questions."</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Teacher Planning & Administrative Help</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Reclaim your time by using AI as a planning assistant. It can help you draft materials,
+                                giving you a solid "first draft" to edit and refine.</p>
+                            <h4>Example Prompts:</h4>
+                            <ul>
+                                <li>"Generate a 3-day lesson plan for 9th-grade English on the topic of 'foreshadowing'
+                                    in 'Of Mice and Men'."</li>
+                                <li>"Create a 4-point rubric for a student presentation on a historical figure. Include
+                                    criteria for 'Research,' 'Organization,' 'Delivery,' and 'Clarity'."</li>
+                                <li>"Draft a positive email to a parent about their student's improvement in class
+                                    participation. Mention their insightful comment about [topic]."</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Supporting Multilingual Learners</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>AI tools are excellent at translation and simplification, making them a valuable resource
+                                for supporting multilingual learners and their families.</p>
+                            <h4>Example Prompts:</h4>
+                            <ul>
+                                <li>"Translate this classroom newsletter into Spanish. Use a warm and friendly tone."
+                                </li>
+                                <li>"I have a student who speaks Ukrainian. Create a side-by-side vocabulary list for
+                                    our unit on 'The Solar System' with English in one column and Ukrainian in the
+                                    other."</li>
+                                <li>"Explain the concept of 'metaphor' in simple English. Provide three examples."</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson Planning & Assessment -->
+            <div id="lesson-assessment" class="tab-pane">
+                <h3>Rethinking Lessons & Assessment</h3>
+                <p>AI challenges us to move beyond traditional assessments and create learning experiences that
+                    prioritize critical thinking, creativity, and the learning process itself.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Effective Prompt Engineering</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>The quality of your AI output depends entirely on the quality of your prompt. Teaching
+                                students (and ourselves) how to write good prompts is a critical 21st-century skill.</p>
+                            <p>The Alaska K12 AI Framework highlights the <strong>PREP</strong> model:</p>
+                            <ul>
+                                <li><strong>P (Prompt):</strong> State the task clearly. (e.g., "Write an essay...")
+                                </li>
+                                <li><strong>R (Role):</strong> Assign the AI a role. (e.g., "...as a skeptical
+                                    historian...")</li>
+                                <li><strong>E (Explicit Information):</strong> Provide context or key details. (e.g.,
+                                    "...focusing on the economic causes of the event...")</li>
+                                <li><strong>P (Parameters):</strong> Set the rules. (e.g., "...in 3 paragraphs, using a
+                                    formal tone.")</li>
+                            </ul>
+                            <p><strong>Example:</strong> "Act as a debate coach. My student is arguing *for* school
+                                uniforms. Generate three strong counter-arguments their opponent might make, and suggest
+                                a rebuttal for each."</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Rethinking Assessment in the Age of AI</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>If AI can write the essay, our assignments must change. Shift the focus from the final
+                                product to the *process* of learning and critical thinking.</p>
+                            <h4>Strategies:</h4>
+                            <ul>
+                                <li><strong>Focus on Process:</strong> Have students submit their brainstorming,
+                                    outlines, and first drafts. Ask them to document how they used AI (if allowed).</li>
+                                <li><strong>In-Class Activities:</strong> Use in-class discussions, Socratic seminars,
+                                    timed writing, or presentations to assess learning in an environment without AI.
+                                </li>
+                                <li><strong>Analyze AI Output:</strong> Give students an AI-generated text and have them
+                                    critique it. Ask them to "fact-check this," "identify the bias," or "improve this
+                                    argument."</li>
+                                <li><strong>Personal Connections:</strong> Require students to connect the topic to
+                                    their own personal experiences, local community, or recent events in ways an AI
+                                    cannot.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">AI Assessment Scale (Adapted from TeachAI)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Be explicit with students about *how much* AI is allowed for any given assignment. This
+                                avoids confusion and promotes academic integrity. Consider adding a scale like this to
+                                your rubrics.</p>
+                            <ul>
+                                <li><strong>Level 1: No AI</strong>
+                                    <ul>
+                                        <li>The assessment must be completed entirely without AI assistance (e.g.,
+                                            in-class exams, handwritten reflections).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Level 2: AI for Planning</strong>
+                                    <ul>
+                                        <li>Students may use AI for pre-task activities like brainstorming, outlining,
+                                            or initial research, but the final work must be their own.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Level 3: AI as Collaborator</strong>
+                                    <ul>
+                                        <li>Students may use AI to help draft, refine, or get feedback on their work.
+                                            Students must critically evaluate and modify all AI-generated content.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Level 4: Full AI</strong>
+                                    <ul>
+                                        <li>Students may use AI extensively to complete the task. The assessment may
+                                            focus on the student's ability to direct the AI, edit the output, and
+                                            achieve a high-quality final product.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Integrity & Ethics -->
+            <div id="academic-integrity" class="tab-pane">
+                <h3>Navigating Ethics & Integrity</h3>
+                <p>This is an opportunity to have deeper conversations with students about honesty, responsibility, and
+                    the value of human thinking. These resources help guide those conversations.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Setting Clear Classroom Expectations</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Don't assume students understand the line between using AI as a tool and cheating. You
+                                must define it for them, for your class, and for each assignment.</p>
+                            <p><strong>Best Practice:</strong> Co-create a "Classroom AI Agreement" with your students.
+                                Discuss when AI is helpful, when it's harmful, and what your shared values are. (See the
+                                TeachAI link below for a sample).</p>
+
+                            <div class="resource-box">
+                                <h4>📋 Key Resources</h4>
+                                <p><strong><a href="https://www.teachai.org/toolkit-student" target="_blank">TeachAI
+                                            Student Toolkit</a></strong><br />
+                                    Comprehensive resources including sample student agreements and guidelines for
+                                    responsible AI use.</p>
+
+                                <p><strong>Alaska AI Acceptable Use & Academic Integrity Resources:</strong></p>
+                                <ul>
+                                    <li>AI Acceptable Use Guidelines (PDF) <a href="https://drive.google.com/file/d/1CForsb-NQsqTsseCz27eIyenwV9EVJV-/view?usp=drive_link"
+                                            target="_blank">PDF</a> | <a href="https://docs.google.com/presentation/d/1DZ4HKGD96qywMTK49bJ7wcwJOh3Jn_7t/edit?usp=drive_link&ouid=105457202449591214111&rtpof=true&sd=true"
+                                            target="_blank">PPTX</a> - Clear guidance
+                                        document defining the 5 levels of AI use for assignments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">How to Cite AI (When Allowed)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>When you allow AI use, students must know how to cite it. This models transparency and
+                                academic honesty. Major style guides have issued guidance.</p>
+                            <h4>Citation Guides:</h4>
+                            <ul>
+                                <li><strong><a href="https://style.mla.org/citing-generative-ai/" target="_blank">MLA
+                                            Style Guide</a></strong> - How to cite generative AI.</li>
+                                <li><strong><a href="https://apastyle.apa.org/blog/how-to-cite-chatgpt"
+                                            target="_blank">APA Style Blog</a></strong> - How to cite ChatGPT and other
+                                    AI.</li>
+                                <li><strong><a
+                                            href="https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Documentation/faq0422.html"
+                                            target="_blank">Chicago Manual of Style</a></strong> - Citation guidance for
+                                    AI.</li>
+                            </ul>
+                            <p><strong>Simple Format:</strong> For younger students, a simple note in the works cited or
+                                a footnote describing which tool was used and what prompt was given is a great starting
+                                point.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Caution: AI Detection Tools</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>It is tempting to use tools that claim to "detect" AI writing. However, leading experts
+                                and organizations caution against their use.</p>
+                            <p>As stated in the TeachAI toolkit (and echoed by many universities):</p>
+                            <p><em>"Teachers should not use technologies that purport to identify the use of generative
+                                    AI to detect cheating and plagiarism. <strong>The accuracy of these technologies is
+                                        questionable</strong>, leading to the risk of false positives and negatives...
+                                    These detectors are often biased against non-native English writers."</em></p>
+                            <p><strong>Instead:</strong> Focus on new assessment strategies and building a culture of
+                                trust and integrity. Conversations about academic honesty are more effective than a
+                                technological arms race.</p>
+                            
+                            <div class="resource-box">
+                                <h4>📚 Further Reading on AI Detection</h4>
+                                <ul>
+                                    <li><strong><a href="https://mitsloanedtech.mit.edu/ai/teach/ai-detectors-dont-work/" target="_blank">AI Detectors Don't Work</a></strong> - MIT Sloan Teaching & Learning Technologies analysis of why AI detection tools fail</li>
+                                    <li><strong><a href="https://facultyhub.chemeketa.edu/technology/generative-ai/why-ai-detection-tools-are-ineffective/" target="_blank">Why AI Detection Tools Are Ineffective</a></strong> - Chemeketa Community College comprehensive review of detection tool limitations</li>
+                                    <li><strong><a href="https://hcommons.org/app/uploads/sites/1003160/2023/07/MLA-CCCC-Joint-Task-Force-on-Writing-and-AI-Working-Paper-1.pdf" target="_blank">MLA-CCCC Joint Task Force on Writing and AI Working Paper</a></strong> - Scholarly analysis of AI's impact on writing instruction and assessment (PDF)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Resources -->
+            <div id="tools-resources" class="tab-pane">
+                <h3>Practical Tools & Resources</h3>
+                <p>A curated list of free-to-use AI tools and further professional development resources for educators.
+                </p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Free AI Tools for Education</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>These tools offer free tiers that are powerful for classroom and professional use. (Note:
+                                Always follow your district's policies and vendor vetting procedures).</p>
+                            <ul>
+                                <li><strong><a href="https://chat.openai.com/" target="_blank">ChatGPT
+                                            (OpenAI)</a>:</strong> The most well-known all-purpose chatbot for text
+                                    generation, brainstorming, and explanation.</li>
+                                <li><strong><a href="https://copilot.microsoft.com/" target="_blank">Microsoft
+                                            Copilot</a>:</strong> A powerful chatbot (based on GPT models) that also
+                                    incorporates live web search results.</li>
+                                <li><strong><a href="https://gemini.google.com/" target="_blank">Google
+                                            Gemini</a>:</strong> Google's chatbot, deeply integrated with search and
+                                    other Google products.</li>
+                                <li><strong><a href="https://www.perplexity.ai/" target="_blank">Perplexity
+                                            AI</a>:</strong> An AI search engine that excels at answering questions and
+                                    citing its (web) sources.</li>
+                                <li><strong><a href="https://claude.ai/" target="_blank">Claude
+                                            (Anthropic)</a>:</strong> Known for its large context window (good for
+                                    analyzing long texts) and strong writing capabilities.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Subject-Specific Resources</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Organizations are building AI tools and resources tailored for specific subjects.</p>
+                            <ul>
+                                <li><strong><a
+                                            href="https://www.khanacademy.org/khan-for-educators/khanmigo-teacher-tools"
+                                            target="_blank">Khan Academy (Khanmigo)</a>:</strong> AI-powered tutoring
+                                    and teacher tools integrated into Khan Academy's platform.</li>
+                                <li><strong><a href="https://code.org/ai" target="_blank">Code.org</a>:</strong>
+                                    Provides resources and curriculum for teaching about AI in computer science.</li>
+                                <li><strong><a href="https://elicit.com/" target="_blank">Elicit</a>:</strong> An AI
+                                    research assistant that can help find papers, summarize research, and extract data
+                                    (useful for science and humanities).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Further Professional Development</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Continue your learning with these comprehensive guides.</p>
+                            <ul>
+                                <li><strong><a href="httpsa://education.alaska.gov/artificial-intelligence"
+                                            target="_blank">Alaska AI Framework (Main Page)</a>:</strong> Your home base
+                                    for all of Alaska's state-level guidance.</li>
+                                <li><strong><a href="https://teachai.org/toolkit" target="_blank">TeachAI
+                                            Toolkit</a>:</strong> The complete, in-depth toolkit for school guidance.
+                                </li>
+                                <li><strong><a href="https://www.iste.org/iste-explores/ai-in-education"
+                                            target="_blank">ISTE AI in Education</a>:</strong> A large collection of
+                                    articles, courses, and resources for educators.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Professional Teaching Practices-->
+            <div id="professional-practices" class="tab-pane">
+                <h3>Professional Teaching Practices & AI Ethics</h3>
+                <p>This section distills key implications of AI use for educators and points to relevant areas of the Professional Teaching Practices Commission (PTPC). It is intended as practical guidance you can apply immediately in your classroom and professional work.</p>
+
+                <div class="resource-box">
+                    <h4>📋 Quick Links</h4>
+                    <ul>
+                        <li><strong><a href="https://education.alaska.gov/ptpc" target="_blank">Professional Teaching Practices Commission</a></strong></li>
+                        <li><strong><a href="https://education.alaska.gov/ptpc/pdf/Code-of-ethics-fullpage.pdf" target="_blank">Full Code of Ethics (PDF)</a></strong></li>
+                    </ul>
+                </div>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Key Ethical Considerations When Using AI</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <h4>Accuracy and Integrity of Curriculum Materials (PTPC B2)</h4>
+                            <ul>
+                                <li>Do not allow AI to distort, fabricate, or misrepresent content presented to students</li>
+                                <li>Avoid unverified narratives - fact-check outputs and cite sources when sharing AI-generated materials</li>
+                                <li>Model responsible use by showing how you verify AI content</li>
+                            </ul>
+
+                            <h4>Respect for Students and Colleagues (PTPC B5, B6)</h4>
+                            <ul>
+                                <li>Do not create, manipulate, or share AI-generated images, audio, or text that depict real students or colleagues in disparaging or inappropriate ways</li>
+                                <li>Avoid "jokes," deepfakes, or role-plays that could harm dignity or be misconstrued</li>
+                            </ul>
+
+                            <h4>Equitable Access and Opportunity (PTPC B9)</h4>
+                            <ul>
+                                <li>If AI is used for learning, ensure students have fair access or provide alternative pathways</li>
+                                <li>Avoid grading or assignment designs that disadvantage students without reliable AI access</li>
+                            </ul>
+
+                            <h4>Copyright and Licensed Curriculum</h4>
+                            <ul>
+                                <li>Do not paste or upload licensed, paid, or restricted curriculum materials into public or third-party AI tools unless your license explicitly allows it</li>
+                                <li>Summarize without copying, or create your own prompts that don't reveal protected content</li>
+                                <li>When in doubt, seek guidance from district curriculum leadership</li>
+                            </ul>
+
+                            <h4>Privacy and Personally Identifiable Information (PII)</h4>
+                            <ul>
+                                <li>Never share PII with AI tools, including names, emails, IDs, photos, or identifiable context</li>
+                                <li>Treat student work as confidential unless you have explicit permission and a compliant tool</li>
+                            </ul>
+
+                            <h4>Professional Accountability</h4>
+                            <ul>
+                                <li>You remain responsible for content you share, even if AI drafted it</li>
+                                <li>Review AI outputs for bias, age appropriateness, and compliance with policy before distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Classroom Practices & Safeguards</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <h4>Verification Routine</h4>
+                            <ul>
+                                <li>Require at least two credible sources for factual claims generated by AI</li>
+                                <li>Use tools' citation features when available and teach students how to check claims</li>
+                            </ul>
+
+                            <h4>Prompt Hygiene</h4>
+                            <ul>
+                                <li>Use abstracted prompts - avoid copying full, licensed passages or assessments into prompts</li>
+                                <li>Strip PII and unique identifiers from any context you provide</li>
+                            </ul>
+
+                            <h4>Assignment Design</h4>
+                            <ul>
+                                <li>Make learning goals explicit and provide AI-optional or AI-free pathways</li>
+                                <li>Assess process, not only product - include drafts, annotations, and reflections</li>
+                            </ul>
+
+                            <h4>Communication Norms</h4>
+                            <ul>
+                                <li>Include a short AI statement in your syllabus and class website spelling out what's allowed, what's not, and how to cite</li>
+                                <li>Avoid sending student lists, emails, or other PII to AI tools for drafting communications</li>
+                            </ul>
+
+                            <h4>Media and Simulations</h4>
+                            <ul>
+                                <li>Use stock or synthetic exemplars rather than real student likenesses</li>
+                                <li>If teaching about deepfakes, select neutral, non-sensitive examples</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Decision Checklist for Educators</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Use this checklist before creating or sharing AI-assisted materials:</strong></p>
+                            <ol>
+                                <li><strong>Purpose:</strong> Is AI the right tool for the learning objective?</li>
+                                <li><strong>Policy:</strong> Does this align with the PTPC and your district's policies? If unsure, pause and ask.</li>
+                                <li><strong>Content integrity:</strong> Have I fact-checked and cited sources where appropriate?</li>
+                                <li><strong>Copyright:</strong> Am I avoiding licensed or restricted materials in prompts and outputs?</li>
+                                <li><strong>Privacy:</strong> Does this contain any PII or sensitive student data? If yes, do not proceed.</li>
+                                <li><strong>Equity:</strong> Will all students have fair access and alternatives?</li>
+                                <li><strong>Professional tone:</strong> Could this be misconstrued as disparaging or inappropriate?</li>
+                            </ol>
+                            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin-top: 1rem;">
+                                <p style="margin: 0; font-weight: 600;">When in doubt, pause and consult your administrator or district office.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">4</div>
+                                <h3 class="step-title">Sample Syllabus Language</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>AI Use in This Course</strong> <em>(Adapt and adopt per district policy)</em></p>
+                            <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                                <ul>
+                                    <li>Students may use AI for brainstorming and revising ideas unless an assignment is labeled "AI-free." All AI assistance must be disclosed and cited.</li>
+                                    <li>Students may not submit AI-generated work as their own. Sources must be verified and claims supported by class materials or credible references.</li>
+                                    <li>No personal data may be entered into AI tools. Use only de-identified or fictional examples.</li>
+                                    <li>Misuse may result in academic consequences per school policy.</li>
+                                </ul>
+                            </div>
+                            <p><em>Note: Customize this language to match your district's specific AI policies and academic integrity standards.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">5</div>
+                                <h3 class="step-title">Alignment with Local Policy & Law</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <h4>Key Compliance Areas</h4>
+                            <ul>
+                                <li>Review your district policies on AI, academic honesty, acceptable use, FERPA, and CIPA</li>
+                                <li>If policies are silent on AI, default to the stricter interpretation of PTPC obligations and privacy law</li>
+                                <li>Coordinate with administrators when piloting AI tools</li>
+                            </ul>
+
+                            <h4>Resources for Compliance</h4>
+                            <ul>
+                                <li><strong><a href="https://education.alaska.gov/ptpc" target="_blank">Professional Teaching Practices Commission</a></strong></li>
+                                <li><strong><a href="https://education.alaska.gov/ptpc/pdf/Code-of-ethics-fullpage.pdf" target="_blank">Full Code of Ethics (PDF)</a></strong></li>
+                                <li><strong>District Policies:</strong> Consult your district's AI or acceptable use policy</li>
+                                <li><strong>FERPA Guidance:</strong> Review student privacy requirements with your district</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin-top: 2rem;">
+                    <h4 style="margin-top: 0;">⚠️ Disclaimer</h4>
+                    <p style="margin-bottom: 0;">This page provides guidance for educators and does not replace the PTPC or district policy. When in doubt, consult your administrator or the district office. For the full legal text and official interpretation, refer to the PTPC on the Alaska Department of Education website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Menu -->
+    <div id="artificial-intelligence-contact"></div>
+
+
+    <script src="ai-footer.js"></script>
+    <script src="ai-navmenu.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs and panes
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+
+        // Ripple effect for tabs
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.tab-btn')) return;
+            var target = e.target.closest('.tab-btn');
+            var ripple = target.querySelector('.ripple');
+            if (!ripple) return;
+            ripple.remove();
+            var newRipple = document.createElement('span');
+            newRipple.className = 'ripple';
+            var rect = target.getBoundingClientRect();
+            var size = Math.max(rect.width, rect.height);
+            newRipple.style.width = newRipple.style.height = size + 'px';
+            newRipple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            newRipple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            target.appendChild(newRipple);
+            setTimeout(function () { newRipple.remove(); }, 500);
+        });
+
+        // Policy Steps Accordion functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const policyStepHeaders = document.querySelectorAll('.policy-step-header');
+
+            policyStepHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const stepItem = this.parentElement;
+                    const content = stepItem.querySelector('.policy-step-content');
+                    const icon = stepItem.querySelector('.policy-step-icon');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    if (isOpen) {
+                        // Close this step
+                        content.classList.add('hidden');
+                        icon.textContent = '+';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Open this step
+                        content.classList.remove('hidden');
+                        icon.textContent = '−';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
