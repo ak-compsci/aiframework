@@ -1,0 +1,736 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educator Guidance - AI in Alaskan K-12 Education</title>
+    <style>
+        /* Tab Styles */
+        .tab-container {
+            margin: 2rem 0;
+        }
+
+        .tab-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #d0d0d0;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 20px;
+            background: #f0f7ff;
+            color: #333;
+            border: 1px solid #b3b3b3;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.13s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s, background 0.2s, color 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        .tab-btn:hover {
+            background: #3f78a7;
+            color: #ffffff;
+            border-color: #2d5a87;
+            box-shadow: 0 4px 16px rgba(0, 102, 204, 0.10);
+            text-decoration: none;
+        }
+
+        .tab-btn.active {
+            background: #2d5a87;
+            color: white;
+            border-color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        .tab-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+        }
+
+        .tab-content {
+            background: white;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            padding: 1.5rem;
+            min-height: 200px;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-btn .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.5s linear;
+            background: rgba(0, 102, 204, 0.18);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .policy-steps-accordion .policy-step-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .policy-step-header:hover .step-number {
+            background-color: #3f78a7;
+            color: white;
+        }
+
+        .policy-step-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .policy-step-content {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+
+            to {
+                opacity: 1;
+                max-height: 1000px;
+                /* Increased max-height for longer content */
+            }
+        }
+
+        /* Accordion Styles */
+        .policy-steps-accordion {
+            margin-top: 1.5rem;
+        }
+
+        .policy-step-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .policy-step-header:hover {
+            background-color: #f8fafc;
+        }
+
+        .step-header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            color: #64748b;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            /* Prevents number from shrinking */
+        }
+
+        .policy-step-header:hover .step-number {
+            background-color: #3f78a7;
+            color: white;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .policy-step-icon {
+            color: #0d9488;
+            font-weight: bold;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .policy-step-content {
+            padding: 1rem;
+            border-top: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            animation: slideDown 0.3s ease-out;
+            overflow: hidden;
+            /* Needed for animation */
+        }
+
+        .policy-step-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
+            /* Adjusted margin */
+        }
+
+        .policy-step-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .policy-step-content ul {
+            list-style-type: disc !important;
+            padding-left: 1.25rem;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-step-content li {
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .policy-step-content p {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .policy-step-content a {
+            color: #0d9488;
+            text-decoration: underline;
+        }
+
+        .policy-step-content a:hover {
+            color: #0F766E;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Utility class for a resource box */
+        .resource-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0d9488;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav Menu -->
+    <div id="artificial-intelligence-nav"></div>
+
+    <h2>Guidance for Students</h2>
+    <p>These resources are designed to help educators guide students in understanding and using AI safely, ethically, and responsibly. Use these materials to teach students about AI fundamentals, effective prompting, privacy protection, digital citizenship, and career preparation. <strong>Many AI tools have age restrictions and data collection practices. Always ensure students get permission from parents or guardians before using any AI service, and prioritize school-approved tools.</strong></p>
+    
+    <div style="background-color: #f0f7ff; border-left: 4px solid #0d9488; padding: 1rem; margin: 1.5rem 0;">
+    <h4 style="margin-top: 0;">💡 For Educators</h4>
+    <p style="margin-bottom: 0;">These materials can be used directly with students, adapted for different grade levels, or referenced when creating your own AI curriculum. Each section includes age-appropriate explanations and activities suitable for classroom use.</p>
+</div>
+
+    <div class="tab-container">
+        <div class="tab-menu">
+            <button class="tab-btn active" data-tab="ai-basics">
+                <span>AI Basics & Lessons</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="prompting">
+                <span>Using AI</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="privacy">
+                <span>Your Data & Privacy (PII)</span>
+                <span class="ripple"></span>
+            </button>
+             <button class="tab-btn" data-tab="integrity">
+                <span>Citing AI & Digital Citizenship</span>
+                <span class="ripple"></span>
+            </button>
+            <button class="tab-btn" data-tab="careers">
+                <span>AI & Your Future (Careers)</span>
+                <span class="ripple"></span>
+            </button>
+        </div>
+
+        <div class="tab-content">
+            <!-- AI Basics & Lessons -->
+            <div id="ai-basics" class="tab-pane active">
+                <h3>What is AI and How Can You Learn About It?</h3>
+                <p>AI is present just about everywhere in modern society. Here’s a quick guide to what it is and where you can learn more about it on your own time.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">What is AI?</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>Artificial Intelligence (AI)</strong> is technology that performs tasks typically requiring human intelligence, such as reasoning, learning, and decision making. These systems are built by combining disciplines like mathematics, statistics, and computer science. They are used in many everyday applications like digital assistants, recommendation engines, and self-driving cars.</p>
+
+                            <h3>Key Concepts and Applications</h3>
+                            <p>AI systems are designed to reason on input and explain on output, offering human-like interactions and decision support for specific tasks</p>
+
+                            <h3>Examples in Action</h3>
+                            <ul>
+                                <li><strong>Voice assistants:</strong> When you say "Hey Siri" or "Okay Google," you are interacting with AI.</li>
+                                <li><strong>Recommendation engines:</strong> These systems suggest content, like movies or products, based on your past behavior.</li>
+                                <li><strong>Customer service:</strong> Chatbots and virtual assistants that provide customer support are a form of AI</li>
+                                <li><strong>Image and speech recognition:</strong> The technology that allows phones to recognize your face or understand your voice is AI-driven.</li>
+                            </ul>
+
+                            <h3>How AI Works</h3>
+                            <p>AI systems learn from large amounts of data using techniques like machine learning and deep learning. They identify patterns and make predictions or decisions based on that data.</p>
+                            <ul>
+                                <li><strong>Machine Learning (ML):</strong> A method where AI systems learn from data to improve their performance on specific tasks without being explicitly programmed.</li>
+                                <li><strong>Deep Learning:</strong> A subset of ML that uses neural networks with many layers to analyze complex data like images and speech.</li>
+                                <li><strong>Generative AI (GenAI):</strong> A type of AI that can generate or create new things, like text, images, or even music, based on the instructions you give it.</li>
+                            </ul>
+
+                            <h3>Types of AI</h3>
+                            <ul>
+                                <li><strong>Narrow AI:</strong> AI systems designed for specific tasks, like voice recognition or recommendation engines.</li>
+                                <li><strong>General AI:</strong> A theoretical form of AI that can perform any intellectual task a human can do. This type of AI does not yet exist.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">Self-Paced Lessons & Activities</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Want to learn more? These free resources are a great place to start. (Ask your teacher or parent before signing up for any new website).</p>
+                            <h4>Activities & Courses:</h4>
+                            <ul>
+                                <li><strong><a href="https://www.commonsense.org/education/collections/ai-literacy-lessons-for-grades-6-12" target="_blank">Common Sense Media: AI Literacy (Grades 6-12)</a></strong> - Great lessons on "What is AI?" and "How is AI Trained?," designed for students.</li>
+                                <li><strong><a href="https://studio.code.org/courses/oceans/units/1" target="_blank">Code.org- AI for Oceans (Grades 3-12)</a></strong> - A fun, series of lessons where you can learn about AI by training it to clean up the ocean.</li>
+                                <li><strong><a href="https://studio.code.org/courses/k5-ai-data-2024/units/1" target="_blank">Code.org - How AI Makes Decisions (Grades 3-5)</a></strong> - An introduction to AI and machine learning with hands-on activities using predictive data models.</li>
+                                <li><strong><a href="https://studio.code.org/courses/problem-solving-with-ai-2025/units/1" target="_blank">Code.org - Problem Solving with AI (Grades 9-12)</a></strong> - Explore how AI generates content, indentify issues like bias and hallucinations, and learn to debug and improve AI outputs for real-world use.</li>
+                                <li><strong><a href="https://www.youtube.com/watch?v=uMzUB89uSxU" target="_blank">What is Artificial Intelligence? (YouTube)</a></strong> - A short, clear video explaining how GenAI works in simple terms.</li>
+                                <li><strong><a href="https://www.youtube.com/watch?v=a0_lo_GDcFw" target="_blank">What is Artificial Intelligence? Crash Course AI (YouTube)</a></strong> - CrashCourse explains what AI can (and can't) do right now and explains how we got to where we are today.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Using AI Smartly (Prompting) -->
+            <div id="prompting" class="tab-pane">
+                <h3>How to Use AI Effectively</h3>
+                <p>The instruction you give to an AI is called a "prompt" and relies on good input. A bad prompt outputs a vague answer. A good prompt helps create a more well-defined answer. Learning to write good prompts is a skill that can be learned after mastering other essential skills.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Master the Basics First!</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p><strong>AI is not a shortcut to learning. It is a tool that works best when YOU already understand the basics.</strong></p>
+                            
+                            <h4>Why Foundational Skills Matter:</h4>
+                            <p>Think about using a language translator app to communicate in another country without learning any of the language yourself. If the app makes a mistake or stops working, you can't tell what's wrong or fix it because you don't understand the basics of that language.</p>
+                            
+                            <p>The same thing happens with AI. If you always let AI write your essays, you won't develop your own thinking and writing skills. If AI solves all your math problems, you won't understand the concepts you need for more advanced work.</p>
+                            
+                            <h4>Essential Skills to Develop BEFORE Using AI:</h4>
+                            <ul>
+                                <li><strong>Reading Comprehension:</strong> You need to understand what you're reading to know if AI's answer makes sense</li>
+                                <li><strong>Writing Skills:</strong> Even if AI helps you brainstorm, YOU need to organize and express your own thoughts clearly</li>
+                                <li><strong>Math Fundamentals:</strong> Understanding basic operations, fractions, and problem-solving strategies</li>
+                                <li><strong>Critical Thinking:</strong> The ability to analyze information and spot when something doesn't make sense</li>
+                                <li><strong>Research Skills:</strong> Knowing how to find and verify information from reliable sources</li>
+                                <li><strong>Creativity & Self-Expression:</strong> AI can't draw from your personal experiences, memories, or cultural background.</li>
+                                <li><strong>Human Connection & Relationships:</strong> AI can't actually care about you or understand your feelings. The relationships you build with family, teachers, and classmates are what make learning meaningful.</li>
+                            </ul>
+                            
+                            <h4>The Right Way to Think About AI:</h4>
+                            <p>Think of AI like training wheels on a bike, not like a motorcycle. Training wheels help you learn to balance while you're still developing the skill. But the goal is to eventually ride without them! AI should help you learn and practice skills, not replace the need to learn them.</p>
+                            
+                            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin-top: 1rem;">
+                                <p><strong>Remember:</strong> AI gets smarter when YOU get smarter. The better you understand the subject, the better questions you can ask and the better you can judge if AI's answers are correct.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">The PREP Model for Good Prompts</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Once you have strong foundational skills, learning to write good prompts becomes a superpower. A great way to
+                                remember how to write a good prompt is the <strong>PREP</strong> model, which is part of the Alaska AI
+                                Framework.</p>
+                            <ul>
+                                <li><strong>P (Prompt):</strong> Be specific about your task. (e.g., "Write an essay...")</li>
+                                <li><strong>R (Role):</strong> Tell the AI *who* to be. (e.g., "...as a friendly science tutor...")</li>
+                                <li><strong>E (Explicit Information):</strong> Give it key details or context. (e.g., "...explaining
+                                    photosynthesis for a 6th grader...")</li>
+                                <li><strong>P (Parameters):</strong> Set the rules. (e.g., "...in three simple bullet points.")</li>
+                            </ul>
+                            <h3 class="step-title">Example: Bad Prompt vs. Good Prompt</h3>
+                            <h4>👎 Bad Prompt:</h4>
+                            <p>"Tell me about the American Revolution."</p>
+                            <p><em>(This is too vague. You'll get a long, boring text that's probably too complicated.)</em></p>
+                        
+                            <h4>👍 Good Prompt (using PREP):</h4>
+                            <p>"Act as a history teacher <strong>(Role)</strong>. Write a short summary of the *main causes* of the American
+                                Revolution <strong>(Prompt)</strong>. Focus on 'taxation without representation' <strong>(Explicit
+                                    Info)</strong>. Explain it in three simple paragraphs, like you're talking to a middle school student
+                                <strong>(Parameters)</strong>."
+                            </p>
+                            <p><strong>Note:</strong> This example works well because you already understand the American Revolution from your
+                                history class. That background knowledge helps you ask better questions and recognize if the AI's answer is accurate!</p>
+
+                            <hr style="margin: 2rem 0;">
+                        
+                            <h4>👎 Bad Prompt (This is cheating!):</h4>
+                            <p>"Write a 500-word essay about the causes of World War I for my history class. Include an introduction, three body
+                                paragraphs, and a conclusion."</p>
+                            <p><em>(This is asking AI to do your homework FOR you. You won't learn anything, and it's plagiarism!)</em></p>
+                        
+                            <h4>👍 Good Prompt (This helps you learn!):</h4>
+                            <p>"Act as a study tutor <strong>(Role)</strong>. Help me understand the main causes of World War I by breaking them
+                                down into simple categories <strong>(Prompt)</strong>. I know about alliances and the assassination of Archduke
+                                Franz Ferdinand, but I'm confused about how imperialism and nationalism played a role <strong>(Explicit
+                                    Info)</strong>. Explain each cause in 2-3 sentences and give me one specific example for each
+                                <strong>(Parameters)</strong>."
+                            </p>
+                        
+                            <h4>Why the Good Prompt Works Better:</h4>
+                            <ul>
+                                <li><strong>You stay in control:</strong> You're asking for help understanding, not asking AI to do the work
+                                </li>
+                                <li><strong>You learn the material:</strong> Now you can write YOUR essay using your new understanding</li>
+                                <li><strong>It's not cheating:</strong> You're using AI like a tutor, not a ghostwriter</li>
+                                <li><strong>You can ask follow-up questions:</strong> "Can you give me another example of nationalism?" or "How
+                                    did these causes connect to each other?"</li>
+                            </ul>
+                        
+                            <p><strong>Note:</strong> The goal is to become smarter, not to avoid learning. Use AI to understand concepts better, then write your own essay. Be sure to verify the information generated and cite your sources!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Data & Privacy (PII) -->
+            <div id="privacy" class="tab-pane">
+                <h3>Protect Your Personal Info!</h3>
+                <p>This is the most important rule of using AI. You must protect your personal information.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">What is PII (Your Personal Info)?</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>PII stands for <strong>Personally Identifiable Information</strong>. It's any info that could be used to find, or identify, you.</p>
+                            <p><strong>This includes:</strong></p>
+                            <ul>
+                                <li>Your full name</li>
+                                <li>Your home address</li>
+                                <li>Your phone number</li>
+                                <li>Your email address</li>
+                                <li>Your Student ID number</li>
+                                <li>Your birthday (month, day, AND year)</li>
+                                <li>Passwords (NEVER share these!)</li>
+                                <li>Your social security number</li>
+                                <li>Photos, videos, or any text information of you, your friends, or family</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">The #1 Rule: NEVER Share PII with an AI</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <div class="alert-box">
+                                <h4 style="margin-top:0;">Warning!</h4>
+                                <p>Public Generative AI tools (like the free versions of ChatGPT, Copilot, etc.) often <strong>save your conversations</strong> to help train their AI. This means your private information is not private anymore. It could be seen by company employees or even show up in someone else's AI-generated answer.</p>
+                            </div>
+                            
+                            <h4>How to Be Safe:</h4>
+                            <ul>
+                                <li><strong>Use your school account.</strong> If your school provides an AI tool, use that one. The district has agreements to protect your data.</li>
+                                <li><strong>Never</strong> type in your full name, address, phone number, or student ID.</li>
+                                <li><strong>Do not</strong> share personal secrets or stories you wouldn't want the world to see.</li>
+                                <li><strong>Think before you type:</strong> "Am I typing anything that could identify me, my friends, or my family?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citing AI & Digital Citizenship -->
+            <div id="integrity" class="tab-pane">
+                <h3>Using AI the Right Way</h3>
+                <p>Using AI is a new part of being a good digital citizen. That means being honest, giving credit, and thinking critically about the information you see.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Rule #1: Your Teacher's Rules Come First!</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Your teacher *always* sets the rules for if and how you can use AI in your class. An assignment might be:</p>
+                            <ul>
+                                <li><strong>No AI:</strong> Your teacher wants to see 100% of your own thinking (like on a test or a personal essay).</li>
+                                <li><strong>AI for Brainstorming:</strong> You can use AI to get ideas, but you must write the assignment yourself.</li>
+                                <li><strong>AI as a Partner:</strong> You can use AI to help you write, but you must check all the facts and cite the AI.</li>
+                            </ul>
+                            <p><strong>If you are not sure, ALWAYS ask your teacher first!</strong> Using AI when it's not allowed is cheating and a form of plagiarism.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">How to Cite AI (When It's Allowed)</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>If your teacher lets you use AI, you must give it credit, just like you would for a website or a book. This is called "citing your source."</p>
+                            <h4>How to Cite:</h4>
+                            <ul>
+                                <li>Your teacher may give you a simple way to do it.</li>
+                                <li>For formal papers, check the official guides:
+                                    <ul>
+                                        <li><strong><a href="https://style.mla.org/citing-generative-ai-updated-revised/" target="_blank">MLA Style Guide</a></strong></li>
+                                        <li><strong><a href="https://apastyle.apa.org/blog/how-to-cite-chatgpt" target="_blank">APA Style Blog</a></strong></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p><strong>Simple Example:</strong> At the end of your paper, you could add a note like:</p>
+                            <p><em>"I used ChatGPT on October 31, 2025, to help brainstorm counter-arguments for my debate essay. The prompt I used was: 'What are three common arguments against school uniforms?'"</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">Don't Believe Everything AI Says!</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>This is a big one. AI makes mistakes, but it sounds very confident when it's wrong.</p>
+                             <ul>
+                                <li><strong>AI can "Hallucinate":</strong> This means it makes up facts, dates, people, and even sources. It might invent a fake website or a book that doesn't exist.</li>
+                                <li><strong>AI can be Biased:</strong> AI learned from the internet, which is full of human opinions and biases. Its answers might be unfair, stereotyped, or one-sided.</li>
+                            </ul>
+                            <p><strong>YOUR JOB AS THE HUMAN:</strong> You are smarter than the AI. You must be the boss. Always <strong>fact-check</strong> the AI's answers using a trusted source (like your textbook, a school database, or a reliable website). You are responsible for the final work!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & Your Future (Careers) -->
+            <div id="careers" class="tab-pane">
+                <h3>How AI Will Affect Your Future</h3>
+                <p>AI is already changing the world, including the jobs people will have. Learning about it now is a great way to get ready for your future.</p>
+
+                <div class="policy-steps-accordion">
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">1</div>
+                                <h3 class="step-title">Will AI Take My Job?</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>This is a common question. The best answer is: <strong>AI probably won't replace you, but a person <em>using</em> AI might.</strong></p>
+                            <p>Think of it like a calculator. Calculators didn't replace mathematicians. They just made them faster and able to solve much bigger problems. AI is the same. It's a tool that will help you be better and faster at your future job.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">2</div>
+                                <h3 class="step-title">What Kinds of Jobs Use AI?</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>Almost all of them! It's not just for tech people. As jobs continue to shift with the advancement of AI, human
+                                skills remain a top priority, along with the ability to have technological skills, creative thinking,
+                                resilience, flexibility, agility, and a passion for learning, as well as leadership, social influence, talent
+                                management, analytical thinking, and environmental stewardship.</p>
+                        
+                            <div style="text-align: center; margin: 1.5rem 0;">
+                                <img src="https://assets.weforum.org/editor/i9oOYKHsxvluYmM-uQr7cE5hyUwn1A8qsMluJC-b-8c.png"
+                                    alt="Top 10 Skills on the Rise - World Economic Forum Future of Jobs Report 2025"
+                                    style="max-width: 50%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+                            </div>
+                        
+                            <p style="font-size: 0.85rem; color: #64748b; text-align: center; margin-bottom: 1.5rem;">
+                                <em>Source: World Economic Forum (2025). Future of Jobs Report 2025.
+                                    <a href="https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-jobs-of-the-future-and-the-skills-you-need-to-get-them/"
+                                        target="_blank">Future of Jobs Report 2025</a></em>
+                            </p>
+                        
+                            <p><strong>But it's not just about technology!</strong> As you can see from the chart above, the most in-demand
+                                skills include both technological abilities AND uniquely human capabilities like creative thinking, resilience,
+                                and leadership - all the skills that make you valuable in an AI-enhanced world.</p>
+                        </div>
+                    </div>
+
+                    <div class="policy-step-item">
+                        <div class="policy-step-header">
+                            <div class="step-header-left">
+                                <div class="step-number">3</div>
+                                <h3 class="step-title">What Skills Should I Learn?</h3>
+                            </div>
+                            <span class="policy-step-icon">+</span>
+                        </div>
+                        <div class="policy-step-content hidden">
+                            <p>The most important skills are the ones that AI <em>can't</em> do. Your human skills are now more valuable than ever!</p>
+                            <ul>
+                                <li><strong>Critical Thinking:</strong> Knowing when output generated by AI is wrong or biased, and when the use of AI is appropriate.</li>
+                                <li><strong>Creativity:</strong> Asking new questions and using technology to co-create solutions to modern-day problems.</li>
+                                <li><strong>Creative Leadership:</strong> Using your unique passions to guide and inspire others, focusing on building and creating rather than just consuming content or solutions.</li>
+                                <li><strong>Communication:</strong> Working with other people to solve problems.</li>
+                                <li><strong>Ethics:</strong> Understanding how to use these technological tools for the betterment of your community, your society, and the world as a whole.</li>
+                                <li><strong>Learning:</strong> Never losing the desire to learn, adapt, and grow.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Menu -->
+    <div id="artificial-intelligence-contact"></div>
+
+
+    <script src="ai-footer.js"></script>
+    <script src="ai-navmenu.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs and panes
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+
+        // Ripple effect for tabs
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.tab-btn')) return;
+            var target = e.target.closest('.tab-btn');
+            var ripple = target.querySelector('.ripple');
+            if (!ripple) return;
+            ripple.remove();
+            var newRipple = document.createElement('span');
+            newRipple.className = 'ripple';
+            var rect = target.getBoundingClientRect();
+            var size = Math.max(rect.width, rect.height);
+            newRipple.style.width = newRipple.style.height = size + 'px';
+            newRipple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            newRipple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            target.appendChild(newRipple);
+            setTimeout(function () { newRipple.remove(); }, 500);
+        });
+
+        // Policy Steps Accordion functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const policyStepHeaders = document.querySelectorAll('.policy-step-header');
+
+            policyStepHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const stepItem = this.parentElement;
+                    const content = stepItem.querySelector('.policy-step-content');
+                    const icon = stepItem.querySelector('.policy-step-icon');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    if (isOpen) {
+                        // Close this step
+                        content.classList.add('hidden');
+                        icon.textContent = '+';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Open this step
+                        content.classList.remove('hidden');
+                        icon.textContent = '−';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
